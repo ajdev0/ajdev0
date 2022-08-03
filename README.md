@@ -3,13 +3,11 @@
 
 <p align="left"> <img src="https://komarev.com/ghpvc/?username=ajdev0&label=Profile%20views&color=0e75b6&style=flat" alt="ajdev0" /> </p>
 
-- 🔭 I’m currently working on [My Portfolio](https://github.com/ajdev0/Portfolio)
+- 💻 All of my projects are available at  [My Portfolio](https://ajdev0.github.io/)
 
 - 🌱 I’m currently learning **DevOps**
 
-- 👨‍💻 All of my projects are available at [https://github.com/ajdev0/Portfolio](https://github.com/ajdev0/Portfolio)
-
-- 💬 Ask me about **React, Node**
+- 💬 Ask me about **React, Node, Laravel**
 
 - 📫 How to reach me **abrar.adam.09@gmail.com**
 
