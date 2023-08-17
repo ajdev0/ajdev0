@@ -7,7 +7,7 @@
 
 - 🌱 I’m currently learning **DevOps**
 
-- 💬 Ask me about **React, Node, Laravel**
+- 💬 Ask me about **React, Node**
 
 - 📫 How to reach me **abrar.adam.09@gmail.com**
 
