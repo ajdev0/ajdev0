@@ -5,7 +5,7 @@
 
 
 
-- 🌱 I’m currently learning **DevOps**
+- 🌱 I’m currently learning **React Native**
 
 - 💬 Ask me about **React, Node**
 
