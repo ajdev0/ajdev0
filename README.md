@@ -9,9 +9,7 @@
 
 - 💬 Ask me about **React, Node**
 
-- 📫 How to reach me **abrar.adam.09@gmail.com**
-
-- 📄 Know about my experiences [https://github.com/ajdev0/resume](https://github.com/ajdev0/resume)
+- 📫 How to reach me **abrarnourain7@gmail.com**
 
 - ⚡ Fun fact **In Tech learning never stop.**
 
