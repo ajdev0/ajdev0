@@ -5,7 +5,7 @@
 
 
 
-- 🌱 I’m currently learning **React Native**
+- 🌱 I always learning **New Tech**
 
 - 💬 Ask me about **React, Node**
 
