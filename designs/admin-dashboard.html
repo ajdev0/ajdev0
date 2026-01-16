@@ -306,13 +306,13 @@
           <!-- Revenue Chart -->
           <div class="bg-white rounded-2xl shadow-lg p-6">
             <div class="flex items-center justify-between mb-6">
-              <h3 class="text-lg font-bold text-gray-800">Revenue Trend</h3>
+              <h3 class="text-lg font-bold text-gray-800">اتجاه الإيرادات</h3>
               <select
                 class="text-sm border border-gray-300 rounded-lg px-3 py-2 text-gray-600"
               >
-                <option>Last 7 days</option>
-                <option>Last 30 days</option>
-                <option>Last 3 months</option>
+                <option>آخر 7 أيام</option>
+                <option>آخر 30 يوم</option>
+                <option>آخر 3 أشهر</option>
               </select>
             </div>
             <div
@@ -321,7 +321,7 @@
             >
               <div class="text-center text-gray-400">
                 <i class="fas fa-chart-line text-4xl mb-2"></i>
-                <p>Revenue Chart</p>
+                <p>رسم بياني للإيرادات</p>
               </div>
             </div>
           </div>
@@ -329,13 +329,15 @@
           <!-- Orders Chart -->
           <div class="bg-white rounded-2xl shadow-lg p-6">
             <div class="flex items-center justify-between mb-6">
-              <h3 class="text-lg font-bold text-gray-800">Orders Overview</h3>
+              <h3 class="text-lg font-bold text-gray-800">
+                نظرة عامة على الطلبات
+              </h3>
               <select
                 class="text-sm border border-gray-300 rounded-lg px-3 py-2 text-gray-600"
               >
-                <option>Last 7 days</option>
-                <option>Last 30 days</option>
-                <option>Last 3 months</option>
+                <option>آخر 7 أيام</option>
+                <option>آخر 30 يوم</option>
+                <option>آخر 3 أشهر</option>
               </select>
             </div>
             <div
@@ -344,7 +346,7 @@
             >
               <div class="text-center text-gray-400">
                 <i class="fas fa-chart-bar text-4xl mb-2"></i>
-                <p>Orders Chart</p>
+                <p>رسم بياني للطلبات</p>
               </div>
             </div>
           </div>
@@ -352,50 +354,48 @@
 
         <!-- Recent Activity -->
         <div class="bg-white rounded-2xl shadow-lg p-6">
-          <h3 class="text-lg font-bold text-gray-800 mb-6">Recent Activity</h3>
+          <h3 class="text-lg font-bold text-gray-800 mb-6">النشاط الأخير</h3>
           <div class="space-y-4">
             <div
               class="flex items-center justify-between pb-4 border-b border-gray-100"
             >
-              <div class="flex items-center space-x-4">
+              <div class="flex items-center space-x-4 space-x-reverse">
                 <div
                   class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center"
                 >
                   <i class="fas fa-shopping-bag text-blue-600"></i>
                 </div>
                 <div>
-                  <p class="font-medium text-gray-800">New order #12547</p>
-                  <p class="text-sm text-gray-500">2 minutes ago</p>
+                  <p class="font-medium text-gray-800">طلب جديد #12547</p>
+                  <p class="text-sm text-gray-500">منذ دقيقتين</p>
                 </div>
               </div>
               <span
                 class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium"
-                >New</span
+                >جديد</span
               >
             </div>
             <div
               class="flex items-center justify-between pb-4 border-b border-gray-100"
             >
-              <div class="flex items-center space-x-4">
+              <div class="flex items-center space-x-4 space-x-reverse">
                 <div
                   class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center"
                 >
                   <i class="fas fa-user-plus text-green-600"></i>
                 </div>
                 <div>
-                  <p class="font-medium text-gray-800">
-                    New merchant registered
-                  </p>
-                  <p class="text-sm text-gray-500">15 minutes ago</p>
+                  <p class="font-medium text-gray-800">تاجر جديد مسجل</p>
+                  <p class="text-sm text-gray-500">منذ 15 دقيقة</p>
                 </div>
               </div>
               <span
                 class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium"
-                >Success</span
+                >نجح</span
               >
             </div>
             <div class="flex items-center justify-between">
-              <div class="flex items-center space-x-4">
+              <div class="flex items-center space-x-4 space-x-reverse">
                 <div
                   class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center"
                 >
@@ -403,14 +403,14 @@
                 </div>
                 <div>
                   <p class="font-medium text-gray-800">
-                    Payment verification pending
+                    تحقق الدفع قيد الانتظار
                   </p>
-                  <p class="text-sm text-gray-500">1 hour ago</p>
+                  <p class="text-sm text-gray-500">منذ ساعة</p>
                 </div>
               </div>
               <span
                 class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium"
-                >Pending</span
+                >قيد الانتظار</span
               >
             </div>
           </div>
@@ -430,25 +430,25 @@
               <i class="fas fa-shield-alt text-white text-xl"></i>
             </div>
             <div>
-              <h1 class="font-bold text-gray-800">Admin Panel</h1>
-              <p class="text-xs text-gray-500">Platform Management</p>
+              <h1 class="font-bold text-gray-800">لوحة الإدارة</h1>
+              <p class="text-xs text-gray-500">إدارة المنصة</p>
             </div>
           </div>
         </div>
         <nav class="p-4 space-y-2">
           <a
             href="#"
-            class="flex items-center space-x-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
           >
             <i class="fas fa-chart-line"></i>
-            <span>Overview</span>
+            <span>نظرة عامة</span>
           </a>
           <a
             href="#"
-            class="flex items-center space-x-3 px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
           >
             <i class="fas fa-shopping-bag"></i>
-            <span>Orders</span>
+            <span>الطلبات</span>
           </a>
         </nav>
       </div>
@@ -471,21 +471,21 @@
           <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2"
-                >Status</label
+                >الحالة</label
               >
               <select
                 class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600"
               >
-                <option>All Status</option>
-                <option>New</option>
-                <option>Processing</option>
-                <option>Delivered</option>
-                <option>Cancelled</option>
+                <option>جميع الحالات</option>
+                <option>جديد</option>
+                <option>قيد المعالجة</option>
+                <option>تم التسليم</option>
+                <option>ملغي</option>
               </select>
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2"
-                >Date Range</label
+                >نطاق التاريخ</label
               >
               <input
                 type="date"
@@ -494,16 +494,16 @@
             </div>
             <div>
               <label class="block text-sm font-medium text-gray-700 mb-2"
-                >Search</label
+                >بحث</label
               >
               <div class="relative">
                 <i
-                  class="fas fa-search absolute left-3 top-3 text-gray-400"
+                  class="fas fa-search absolute right-3 top-3 text-gray-400"
                 ></i>
                 <input
                   type="text"
-                  placeholder="Order ID, Customer..."
-                  class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg"
+                  placeholder="رقم الطلب، العميل..."
+                  class="w-full pr-10 pl-4 py-2 border border-gray-300 rounded-lg"
                 />
               </div>
             </div>
@@ -511,7 +511,7 @@
               <button
                 class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-2 rounded-lg font-medium"
               >
-                Filter
+                تصفية
               </button>
             </div>
           </div>
@@ -524,39 +524,39 @@
               <thead class="bg-gray-50">
                 <tr>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Order ID
+                    رقم الطلب
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Customer
+                    العميل
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Merchant
+                    التاجر
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Amount
+                    المبلغ
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Status
+                    الحالة
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Date
+                    التاريخ
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Actions
+                    الإجراءات
                   </th>
                 </tr>
               </thead>
@@ -567,24 +567,24 @@
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
                     <div>
-                      <p class="font-medium text-gray-800">John Doe</p>
-                      <p class="text-sm text-gray-500">john@example.com</p>
+                      <p class="font-medium text-gray-800">محمد أحمد</p>
+                      <p class="text-sm text-gray-500">mohammed@example.com</p>
                     </div>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
-                    <span class="text-gray-600">Fresh Market</span>
+                    <span class="text-gray-600">السوق الطازج</span>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
-                    <span class="font-medium text-gray-800">$13.47</span>
+                    <span class="font-medium text-gray-800">13.47 ريال</span>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
                     <span
                       class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium"
-                      >Delivered</span
+                      >تم التسليم</span
                     >
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    2:30 PM • Today
+                    2:30 م • اليوم
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
                     <button class="text-indigo-600 hover:text-indigo-700">
@@ -611,18 +611,18 @@
               <i class="fas fa-shield-alt text-white text-xl"></i>
             </div>
             <div>
-              <h1 class="font-bold text-gray-800">Admin Panel</h1>
-              <p class="text-xs text-gray-500">Platform Management</p>
+              <h1 class="font-bold text-gray-800">لوحة الإدارة</h1>
+              <p class="text-xs text-gray-500">إدارة المنصة</p>
             </div>
           </div>
         </div>
         <nav class="p-4 space-y-2">
           <a
             href="#"
-            class="flex items-center space-x-3 px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
           >
             <i class="fas fa-credit-card"></i>
-            <span>Payments & Wallets</span>
+            <span>المدفوعات والمحافظ</span>
           </a>
         </nav>
       </div>
@@ -645,8 +645,8 @@
                 <i class="fas fa-dollar-sign text-green-600 text-xl"></i>
               </div>
             </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-1">$245,890</h3>
-            <p class="text-sm text-gray-500">Total Payments</p>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">245,890 ريال</h3>
+            <p class="text-sm text-gray-500">إجمالي المدفوعات</p>
           </div>
           <div class="bg-white rounded-2xl shadow-lg p-6">
             <div class="flex items-center justify-between mb-4">
@@ -657,7 +657,7 @@
               </div>
             </div>
             <h3 class="text-2xl font-bold text-gray-800 mb-1">23</h3>
-            <p class="text-sm text-gray-500">Pending Verifications</p>
+            <p class="text-sm text-gray-500">تحققات قيد الانتظار</p>
           </div>
           <div class="bg-white rounded-2xl shadow-lg p-6">
             <div class="flex items-center justify-between mb-4">
@@ -667,8 +667,8 @@
                 <i class="fas fa-undo text-red-600 text-xl"></i>
               </div>
             </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-1">$1,245</h3>
-            <p class="text-sm text-gray-500">Refunds Requested</p>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">1,245 ريال</h3>
+            <p class="text-sm text-gray-500">طلبات الاسترجاع</p>
           </div>
         </div>
 
@@ -703,39 +703,39 @@
               <thead class="bg-gray-50">
                 <tr>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Receipt ID
+                    رقم الإيصال
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    User
+                    المستخدم
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Amount
+                    المبلغ
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Receipt
+                    الإيصال
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Status
+                    الحالة
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Date
+                    التاريخ
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Actions
+                    الإجراءات
                   </th>
                 </tr>
               </thead>
@@ -746,40 +746,40 @@
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
                     <div>
-                      <p class="font-medium text-gray-800">John Doe</p>
-                      <p class="text-sm text-gray-500">john@example.com</p>
+                      <p class="font-medium text-gray-800">محمد أحمد</p>
+                      <p class="text-sm text-gray-500">mohammed@example.com</p>
                     </div>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
-                    <span class="font-medium text-gray-800">$13.47</span>
+                    <span class="font-medium text-gray-800">13.47 ريال</span>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
                     <button
                       class="text-indigo-600 hover:text-indigo-700 text-sm font-medium"
                     >
-                      <i class="fas fa-file-image mr-1"></i>View
+                      <i class="fas fa-file-image ml-1"></i>عرض
                     </button>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
                     <span
                       class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium"
-                      >Pending</span
+                      >قيد الانتظار</span
                     >
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    2:30 PM • Today
+                    2:30 م • اليوم
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
-                    <div class="flex space-x-2">
+                    <div class="flex space-x-2 space-x-reverse">
                       <button
                         class="text-green-600 hover:text-green-700"
-                        title="Approve"
+                        title="موافقة"
                       >
                         <i class="fas fa-check"></i>
                       </button>
                       <button
                         class="text-red-600 hover:text-red-700"
-                        title="Reject"
+                        title="رفض"
                       >
                         <i class="fas fa-times"></i>
                       </button>
@@ -805,18 +805,18 @@
               <i class="fas fa-shield-alt text-white text-xl"></i>
             </div>
             <div>
-              <h1 class="font-bold text-gray-800">Admin Panel</h1>
-              <p class="text-xs text-gray-500">Platform Management</p>
+              <h1 class="font-bold text-gray-800">لوحة الإدارة</h1>
+              <p class="text-xs text-gray-500">إدارة المنصة</p>
             </div>
           </div>
         </div>
         <nav class="p-4 space-y-2">
           <a
             href="#"
-            class="flex items-center space-x-3 px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
           >
             <i class="fas fa-users"></i>
-            <span>Users</span>
+            <span>المستخدمون</span>
           </a>
         </nav>
       </div>
@@ -877,39 +877,39 @@
               <thead class="bg-gray-50">
                 <tr>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    User
+                    المستخدم
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Email
+                    البريد الإلكتروني
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Phone
+                    الهاتف
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Orders
+                    الطلبات
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Status
+                    الحالة
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Joined
+                    تاريخ الانضمام
                   </th>
                   <th
-                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                    class="px-6 py-4 text-right text-xs font-medium text-gray-500 uppercase"
                   >
-                    Actions
+                    الإجراءات
                   </th>
                 </tr>
               </thead>
@@ -918,20 +918,20 @@
                   <td class="px-6 py-4 whitespace-nowrap">
                     <div class="flex items-center">
                       <div
-                        class="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-3"
+                        class="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold ml-3"
                       >
-                        JD
+                        مح
                       </div>
                       <div>
-                        <p class="font-medium text-gray-800">John Doe</p>
+                        <p class="font-medium text-gray-800">محمد أحمد</p>
                       </div>
                     </div>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
-                    <span class="text-gray-600">john@example.com</span>
+                    <span class="text-gray-600">mohammed@example.com</span>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
-                    <span class="text-gray-600">+1 234 567 8900</span>
+                    <span class="text-gray-600">05xxxxxxxx</span>
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
                     <span class="font-medium text-gray-800">24</span>
@@ -939,11 +939,11 @@
                   <td class="px-6 py-4 whitespace-nowrap">
                     <span
                       class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium"
-                      >Active</span
+                      >نشط</span
                     >
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                    Jan 15, 2024
+                    15 يناير 2024
                   </td>
                   <td class="px-6 py-4 whitespace-nowrap">
                     <button class="text-indigo-600 hover:text-indigo-700">
@@ -970,18 +970,18 @@
               <i class="fas fa-shield-alt text-white text-xl"></i>
             </div>
             <div>
-              <h1 class="font-bold text-gray-800">Admin Panel</h1>
-              <p class="text-xs text-gray-500">Platform Management</p>
+              <h1 class="font-bold text-gray-800">لوحة الإدارة</h1>
+              <p class="text-xs text-gray-500">إدارة المنصة</p>
             </div>
           </div>
         </div>
         <nav class="p-4 space-y-2">
           <a
             href="#"
-            class="flex items-center space-x-3 px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
           >
             <i class="fas fa-ticket-alt"></i>
-            <span>Coupons & Offers</span>
+            <span>الكوبونات والعروض</span>
           </a>
         </nav>
       </div>
@@ -1012,7 +1012,7 @@
               <div
                 class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm font-medium"
               >
-                Active
+                نشط
               </div>
               <button
                 class="text-white hover:bg-white hover:bg-opacity-20 rounded-full w-8 h-8 flex items-center justify-center"
@@ -1021,10 +1021,10 @@
               </button>
             </div>
             <h3 class="text-2xl font-bold mb-2">FIRST30</h3>
-            <p class="text-purple-100 mb-4">30% OFF on first order</p>
+            <p class="text-purple-100 mb-4">خصم 30% على أول طلب</p>
             <div class="flex items-center justify-between text-sm">
-              <span>Valid until: Jan 31, 2025</span>
-              <span class="font-bold">234 uses</span>
+              <span>صالح حتى: 31 يناير 2025</span>
+              <span class="font-bold">234 استخدام</span>
             </div>
           </div>
 
@@ -1035,7 +1035,7 @@
               <div
                 class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm font-medium"
               >
-                Active
+                نشط
               </div>
               <button
                 class="text-white hover:bg-white hover:bg-opacity-20 rounded-full w-8 h-8 flex items-center justify-center"
@@ -1044,10 +1044,12 @@
               </button>
             </div>
             <h3 class="text-2xl font-bold mb-2">FREEDEL</h3>
-            <p class="text-blue-100 mb-4">Free delivery on orders $25+</p>
+            <p class="text-blue-100 mb-4">
+              توصيل مجاني على الطلبات أكثر من 25 ريال
+            </p>
             <div class="flex items-center justify-between text-sm">
-              <span>Valid until: Dec 31, 2024</span>
-              <span class="font-bold">1,245 uses</span>
+              <span>صالح حتى: 31 ديسمبر 2024</span>
+              <span class="font-bold">1,245 استخدام</span>
             </div>
           </div>
 
@@ -1058,7 +1060,7 @@
               <div
                 class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm font-medium"
               >
-                Active
+                نشط
               </div>
               <button
                 class="text-white hover:bg-white hover:bg-opacity-20 rounded-full w-8 h-8 flex items-center justify-center"
@@ -1067,10 +1069,12 @@
               </button>
             </div>
             <h3 class="text-2xl font-bold mb-2">SAVE15</h3>
-            <p class="text-green-100 mb-4">$15 OFF on orders $50+</p>
+            <p class="text-green-100 mb-4">
+              خصم 15 ريال على الطلبات أكثر من 50 ريال
+            </p>
             <div class="flex items-center justify-between text-sm">
-              <span>Valid until: Feb 28, 2025</span>
-              <span class="font-bold">567 uses</span>
+              <span>صالح حتى: 28 فبراير 2025</span>
+              <span class="font-bold">567 استخدام</span>
             </div>
           </div>
         </div>
@@ -1089,18 +1093,18 @@
               <i class="fas fa-shield-alt text-white text-xl"></i>
             </div>
             <div>
-              <h1 class="font-bold text-gray-800">Admin Panel</h1>
-              <p class="text-xs text-gray-500">Platform Management</p>
+              <h1 class="font-bold text-gray-800">لوحة الإدارة</h1>
+              <p class="text-xs text-gray-500">إدارة المنصة</p>
             </div>
           </div>
         </div>
         <nav class="p-4 space-y-2">
           <a
             href="#"
-            class="flex items-center space-x-3 px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
           >
             <i class="fas fa-chart-bar"></i>
-            <span>Reports</span>
+            <span>التقارير</span>
           </a>
         </nav>
       </div>
@@ -1139,7 +1143,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
           <div class="bg-white rounded-2xl shadow-lg p-6">
             <h3 class="text-lg font-bold text-gray-800 mb-6">
-              Revenue Analysis
+              تحليل الإيرادات
             </h3>
             <div
               id="revenueReportChart"
@@ -1147,20 +1151,20 @@
             >
               <div class="text-center text-gray-400">
                 <i class="fas fa-chart-area text-4xl mb-2"></i>
-                <p>Revenue Chart</p>
+                <p>رسم بياني للإيرادات</p>
               </div>
             </div>
           </div>
 
           <div class="bg-white rounded-2xl shadow-lg p-6">
-            <h3 class="text-lg font-bold text-gray-800 mb-6">User Growth</h3>
+            <h3 class="text-lg font-bold text-gray-800 mb-6">نمو المستخدمين</h3>
             <div
               id="userGrowthChart"
               class="h-80 flex items-center justify-center bg-gray-50 rounded-xl"
             >
               <div class="text-center text-gray-400">
                 <i class="fas fa-chart-line text-4xl mb-2"></i>
-                <p>User Growth Chart</p>
+                <p>رسم بياني لنمو المستخدمين</p>
               </div>
             </div>
           </div>
@@ -1170,25 +1174,29 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
           <div class="bg-white rounded-2xl shadow-lg p-6">
             <h4 class="text-sm font-medium text-gray-500 mb-2">
-              Total Revenue
+              إجمالي الإيرادات
             </h4>
-            <p class="text-3xl font-bold text-gray-800 mb-4">$245,890</p>
+            <p class="text-3xl font-bold text-gray-800 mb-4">245,890 ريال</p>
             <p class="text-sm text-green-600">
-              <i class="fas fa-arrow-up mr-1"></i>22% from last period
+              <i class="fas fa-arrow-up ml-1"></i>22% من الفترة السابقة
             </p>
           </div>
           <div class="bg-white rounded-2xl shadow-lg p-6">
-            <h4 class="text-sm font-medium text-gray-500 mb-2">Active Users</h4>
+            <h4 class="text-sm font-medium text-gray-500 mb-2">
+              المستخدمون النشطون
+            </h4>
             <p class="text-3xl font-bold text-gray-800 mb-4">8,956</p>
             <p class="text-sm text-green-600">
-              <i class="fas fa-arrow-up mr-1"></i>8% from last period
+              <i class="fas fa-arrow-up ml-1"></i>8% من الفترة السابقة
             </p>
           </div>
           <div class="bg-white rounded-2xl shadow-lg p-6">
-            <h4 class="text-sm font-medium text-gray-500 mb-2">Total Orders</h4>
+            <h4 class="text-sm font-medium text-gray-500 mb-2">
+              إجمالي الطلبات
+            </h4>
             <p class="text-3xl font-bold text-gray-800 mb-4">12,547</p>
             <p class="text-sm text-green-600">
-              <i class="fas fa-arrow-up mr-1"></i>15% from last period
+              <i class="fas fa-arrow-up ml-1"></i>15% من الفترة السابقة
             </p>
           </div>
         </div>
