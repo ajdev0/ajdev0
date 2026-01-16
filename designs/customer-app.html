@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تطبيق العملاء - التصاميم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Cairo", sans-serif;
+      }
+      .screen {
+        min-height: 100vh;
+        max-width: 428px;
+        margin: 0 auto;
+        position: relative;
+      }
+      .nav-bottom {
+        position: fixed;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 428px;
+        width: 100%;
+      }
+      .gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .gradient-secondary {
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+      }
+      .gradient-success {
+        background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+      }
+      .carousel-item {
+        min-width: 100%;
+      }
+      .scroll-snap {
+        scroll-snap-type: x mandatory;
+      }
+      .scroll-snap > * {
+        scroll-snap-align: start;
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              cairo: ["Cairo", "sans-serif"],
+            },
+            colors: {
+              primary: "#2D3748",
+              secondary: "#4A5568",
+              accent: "#F59E0B",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100 font-cairo">
+    <!-- شاشة البداية -->
+    <div
+      id="splash"
+      class="screen bg-white flex items-center justify-center gradient-primary"
+    >
+      <div class="text-center">
+        <div
+          class="w-24 h-24 bg-white rounded-3xl mx-auto mb-6 flex items-center justify-center shadow-2xl"
+        >
+          <i class="fas fa-store text-5xl text-purple-600"></i>
+        </div>
+        <h1 class="text-3xl font-bold text-white mb-2">تسوق سهل</h1>
+        <p class="text-purple-100 mb-8">رفيقك في التسوق</p>
+        <div class="flex justify-center space-x-2 space-x-reverse">
+          <div class="w-2 h-2 bg-white rounded-full animate-pulse"></div>
+          <div
+            class="w-2 h-2 bg-white rounded-full animate-pulse"
+            style="animation-delay: 0.2s"
+          ></div>
+          <div
+            class="w-2 h-2 bg-white rounded-full animate-pulse"
+            style="animation-delay: 0.4s"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- شاشة تسجيل الدخول -->
+    <div id="login" class="screen bg-white pb-20">
+      <div class="pt-12 px-6">
+        <div class="text-center mb-8">
+          <div
+            class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl mx-auto mb-4 flex items-center justify-center"
+          >
+            <i class="fas fa-store text-3xl text-white"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gray-800 mb-2">مرحباً بعودتك</h2>
+          <p class="text-gray-500">سجل الدخول للمتابعة</p>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >الهاتف / البريد الإلكتروني</label
+            >
+            <div class="relative">
+              <i class="fas fa-user absolute right-4 top-4 text-gray-400"></i>
+              <input
+                type="text"
+                placeholder="أدخل رقم الهاتف أو البريد الإلكتروني"
+                class="w-full pr-12 pl-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >كلمة المرور</label
+            >
+            <div class="relative">
+              <i class="fas fa-lock absolute right-4 top-4 text-gray-400"></i>
+              <input
+                type="password"
+                placeholder="أدخل كلمة المرور"
+                class="w-full pr-12 pl-12 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+              <i class="fas fa-eye absolute left-4 top-4 text-gray-400"></i>
+            </div>
+          </div>
+
+          <div class="flex justify-start">
+            <a href="#" class="text-sm text-purple-600 font-medium"
+              >نسيت كلمة المرور؟</a
+            >
+          </div>
+
+          <button
+            class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition"
+          >
+            تسجيل الدخول
+          </button>
+
+          <div class="flex items-center my-6">
+            <div class="flex-1 border-t border-gray-300"></div>
+            <span class="px-4 text-gray-500 text-sm">أو</span>
+            <div class="flex-1 border-t border-gray-300"></div>
+          </div>
+
+          <div class="flex justify-center space-x-4 space-x-reverse">
+            <button
+              class="w-12 h-12 border-2 border-gray-300 rounded-xl flex items-center justify-center"
+            >
+              <i class="fab fa-google text-red-500"></i>
+            </button>
+            <button
+              class="w-12 h-12 border-2 border-gray-300 rounded-xl flex items-center justify-center"
+            >
+              <i class="fab fa-facebook text-blue-600"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="text-center mt-8">
+          <p class="text-gray-600">
+            ليس لديك حساب؟
+            <a href="#" class="text-purple-600 font-semibold"
+              >إنشاء حساب</a
+            >
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- شاشة إنشاء حساب -->
+    <div id="signup" class="screen bg-white pb-20">
+      <div class="pt-12 px-6">
+        <div class="flex items-center mb-8">
+          <i class="fas fa-arrow-right text-gray-600 text-xl"></i>
+          <h2 class="text-2xl font-bold text-gray-800 mr-4">إنشاء حساب</h2>
+        </div>
+
+        <div class="space-y-4">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >الاسم الكامل</label
+            >
+            <div class="relative">
+              <i class="fas fa-user absolute right-4 top-4 text-gray-400"></i>
+              <input
+                type="text"
+                placeholder="محمد أحمد"
+                class="w-full pr-12 pl-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >رقم الهاتف</label
+            >
+            <div class="relative">
+              <i class="fas fa-phone absolute right-4 top-4 text-gray-400"></i>
+              <input
+                type="tel"
+                placeholder="05xxxxxxxx"
+                class="w-full pr-12 pl-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >البريد الإلكتروني</label
+            >
+            <div class="relative">
+              <i
+                class="fas fa-envelope absolute right-4 top-4 text-gray-400"
+              ></i>
+              <input
+                type="email"
+                placeholder="example@email.com"
+                class="w-full pr-12 pl-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >كلمة المرور</label
+            >
+            <div class="relative">
+              <i class="fas fa-lock absolute right-4 top-4 text-gray-400"></i>
+              <input
+                type="password"
+                placeholder="أنشئ كلمة مرور"
+                class="w-full pr-12 pl-12 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+              <i class="fas fa-eye absolute left-4 top-4 text-gray-400"></i>
+            </div>
+          </div>
+
+          <button
+            class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-semibold shadow-lg mt-6"
+          >
+            إنشاء حساب
+          </button>
+
+          <p class="text-xs text-gray-500 text-center mt-4">
+            بالتسجيل، أنت توافق على
+            <a href="#" class="text-purple-600">الشروط والأحكام</a>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- الشاشة الرئيسية -->
+    <div id="home" class="screen bg-gray-50 pb-24">
+      <!-- الهيدر -->
+      <div class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="px-4 py-3">
+          <div class="flex items-center justify-between mb-3">
+            <div class="flex items-center space-x-2 space-x-reverse">
+              <i class="fas fa-map-marker-alt text-purple-600"></i>
+              <span class="text-sm font-medium text-gray-700"
+                >الرياض، حي النرجس</span
+              >
+              <i class="fas fa-chevron-down text-xs text-gray-400"></i>
+            </div>
+            <div class="flex items-center space-x-4 space-x-reverse">
+              <i class="fas fa-bell text-gray-600"></i>
+              <i class="fas fa-shopping-cart text-gray-600 relative">
+                <span
+                  class="absolute -top-2 -left-2 bg-red-500 text-white text-xs w-5 h-5 rounded-full flex items-center justify-center"
+                  >3</span
+                >
+              </i>
+            </div>
+          </div>
+          <div class="relative">
+            <i class="fas fa-search absolute right-4 top-4 text-gray-400"></i>
+            <input
+              type="text"
+              placeholder="ابحث عن متاجر، منتجات..."
+              class="w-full pr-12 pl-4 py-3 bg-gray-100 rounded-xl border-0 focus:ring-2 focus:ring-purple-500"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="px-4 py-4">
+        <!-- الفئات -->
+        <div class="flex space-x-3 space-x-reverse mb-6 overflow-x-auto scroll-snap pb-2">
+          <div
+            class="bg-gradient-to-br from-purple-500 to-pink-500 px-6 py-3 rounded-2xl flex-shrink-0 text-white font-medium shadow-lg"
+          >
+            <i class="fas fa-utensils ml-2"></i>طعام
+          </div>
+          <div
+            class="bg-white px-6 py-3 rounded-2xl flex-shrink-0 text-gray-700 font-medium shadow"
+          >
+            <i class="fas fa-tshirt ml-2 text-purple-600"></i>ملابس
+          </div>
+          <div
+            class="bg-white px-6 py-3 rounded-2xl flex-shrink-0 text-gray-700 font-medium shadow"
+          >
+            <i class="fas fa-palette ml-2 text-purple-600"></i>تجميل
+          </div>
+          <div
+            class="bg-white px-6 py-3 rounded-2xl flex-shrink-0 text-gray-700 font-medium shadow"
+          >
+            <i class="fas fa-spa ml-2 text-purple-600"></i>عناية
+          </div>
+        </div>
+
+        <!-- العروض النشطة -->
+        <div class="mb-6">
+          <div
+            class="bg-gradient-to-r from-orange-400 to-pink-500 rounded-2xl p-4 text-white shadow-lg"
+          >
+            <div class="flex items-center justify-between">
+              <div>
+                <p class="text-sm opacity-90 mb-1">عرض خاص</p>
+                <p class="text-xl font-bold">خصم 30%</p>
+                <p class="text-sm opacity-90 mt-1">على طلبك الأول</p>
+              </div>
+              <div class="text-5xl opacity-30">
+                <i class="fas fa-tag"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- المتاجر المميزة -->
+        <div class="mb-6">
+          <h3 class="text-lg font-bold text-gray-800 mb-3">المتاجر المميزة</h3>
+          <div class="space-y-3">
+            <div class="bg-white rounded-2xl shadow overflow-hidden">
+              <div
+                class="h-32 bg-gradient-to-r from-blue-400 to-purple-500 relative"
+              >
+                <div
+                  class="absolute top-2 left-2 bg-yellow-400 text-white px-2 py-1 rounded-lg text-xs font-bold"
+                >
+                  4.8★
+                </div>
+              </div>
+              <div class="p-4">
+                <h4 class="font-bold text-gray-800 mb-1">السوق الطازج</h4>
+                <p class="text-sm text-gray-500 mb-2">
+                  بقالة وحاجات يومية
+                </p>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-gray-600"
+                    ><i class="fas fa-clock ml-1"></i>20-30 دقيقة</span
+                  >
+                  <span class="text-xs text-purple-600 font-medium"
+                    ><i class="fas fa-shipping-fast ml-1"></i>توصيل مجاني
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow overflow-hidden">
+              <div
+                class="h-32 bg-gradient-to-r from-pink-400 to-red-500 relative"
+              >
+                <div
+                  class="absolute top-2 left-2 bg-yellow-400 text-white px-2 py-1 rounded-lg text-xs font-bold"
+                >
+                  4.9★
+                </div>
+              </div>
+              <div class="p-4">
+                <h4 class="font-bold text-gray-800 mb-1">مركز الأزياء</h4>
+                <p class="text-sm text-gray-500 mb-2">ملابس وإكسسوارات</p>
+                <div class="flex items-center justify-between">
+                  <span class="text-xs text-gray-600"
+                    ><i class="fas fa-clock ml-1"></i>30-45 دقيقة</span
+                  >
+                  <span class="text-xs text-purple-600 font-medium"
+                    ><i class="fas fa-shipping-fast ml-1"></i>2.99 ريال
+                    توصيل</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- القائمة السفلية -->
+      <div class="nav-bottom bg-white border-t border-gray-200 px-4 py-2">
+        <div class="flex justify-around">
+          <div class="flex flex-col items-center py-2">
+            <i class="fas fa-home text-purple-600 text-xl mb-1"></i>
+            <span class="text-xs text-purple-600 font-medium">الرئيسية</span>
+          </div>
+          <div class="flex flex-col items-center py-2">
+            <i class="fas fa-search text-gray-400 text-xl mb-1"></i>
+            <span class="text-xs text-gray-400">استكشف</span>
+          </div>
+          <div class="flex flex-col items-center py-2">
+            <i class="fas fa-shopping-bag text-gray-400 text-xl mb-1"></i>
+            <span class="text-xs text-gray-400">الطلبات</span>
+          </div>
+          <div class="flex flex-col items-center py-2">
+            <i class="fas fa-user text-gray-400 text-xl mb-1"></i>
+            <span class="text-xs text-gray-400">حسابي</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- قائمة الفئات -->
+    <div id="category" class="screen bg-gray-50 pb-24">
+      <div class="bg-white shadow-sm sticky top-0 z-10 px-4 py-3">
+        <div class="flex items-center">
+          <i class="fas fa-arrow-right text-gray-600 text-xl ml-4"></i>
+          <h2 class="text-xl font-bold text-gray-800">الطعام والمطاعم</h2>
+        </div>
+      </div>
+
+      <div class="px-4 py-4 space-y-4">
+        <div class="bg-white rounded-2xl shadow overflow-hidden">
+          <div
+            class="h-40 bg-gradient-to-r from-blue-400 to-purple-500 relative"
+          >
+            <div
+              class="absolute top-3 left-3 bg-yellow-400 text-white px-3 py-1 rounded-lg text-sm font-bold"
+            >
+              4.8★
+            </div>
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-gray-800 mb-1">قصر البرجر</h4>
+            <p class="text-sm text-gray-500 mb-2">وجبات سريعة • أمريكي • $$</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-600"
+                ><i class="fas fa-clock ml-1"></i>15-25 دقيقة</span
+              >
+              <span class="text-xs text-green-600 font-medium"
+                ><i class="fas fa-check-circle ml-1"></i>مفتوح الآن</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow overflow-hidden">
+          <div
+            class="h-40 bg-gradient-to-r from-green-400 to-teal-500 relative"
+          >
+            <div
+              class="absolute top-3 left-3 bg-yellow-400 text-white px-3 py-1 rounded-lg text-sm font-bold"
+            >
+              4.9★
+            </div>
+          </div>
+          <div class="p-4">
+            <h4 class="font-bold text-gray-800 mb-1">زاوية البيتزا</h4>
+            <p class="text-sm text-gray-500 mb-2">إيطالي • بيتزا • $$</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-gray-600"
+                ><i class="fas fa-clock ml-1"></i>20-30 دقيقة</span
+              >
+              <span class="text-xs text-green-600 font-medium"
+                ><i class="fas fa-check-circle ml-1"></i>مفتوح الآن</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- صفحة المتجر -->
+    <div id="store" class="screen bg-white pb-24">
+      <div class="relative">
+        <div class="h-48 bg-gradient-to-r from-purple-500 to-pink-500 relative">
+          <i
+            class="fas fa-arrow-right absolute top-4 right-4 text-white text-xl bg-black bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center"
+          ></i>
+          <i
+            class="fas fa-heart absolute top-4 left-4 text-white text-xl bg-black bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center"
+          ></i>
+        </div>
+        <div class="px-4 -mt-6 relative z-10">
+          <div class="bg-white rounded-2xl shadow-xl p-4 mb-4">
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">السوق الطازج</h2>
+            <div class="flex items-center space-x-4 space-x-reverse mb-3">
+              <div class="flex items-center">
+                <i class="fas fa-star text-yellow-400 ml-1"></i>
+                <span class="text-sm font-medium text-gray-700">4.8 (234)</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-clock text-gray-400 ml-1"></i>
+                <span class="text-sm text-gray-600">20-30 دقيقة</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fas fa-truck text-gray-400 ml-1"></i>
+                <span class="text-sm text-gray-600">توصيل مجاني</span>
+              </div>
+            </div>
+            <p class="text-sm text-gray-600">
+              بقالة، منتجات طازجة، حاجات يومية
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-4">
+        <div class="flex space-x-2 space-x-reverse mb-4 overflow-x-auto">
+          <span
+            class="px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-medium whitespace-nowrap"
+            >الكل</span
+          >
+          <span
+            class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap"
+            >فواكه</span
+          >
+          <span
+            class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap"
+            >خضروات</span
+          >
+          <span
+            class="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium whitespace-nowrap"
+            >ألبان</span
+          >
+        </div>
+
+        <div class="space-y-3">
+          <div class="bg-white rounded-xl shadow p-4 flex">
+            <div
+              class="w-24 h-24 bg-gradient-to-br from-green-400 to-green-600 rounded-xl ml-4 flex-shrink-0"
+            ></div>
+            <div class="flex-1">
+              <h4 class="font-bold text-gray-800 mb-1">تفاح طازج</h4>
+              <p class="text-sm text-gray-500 mb-2">أحمر لذيذ، 1 كيلو</p>
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-gray-800">4.99 ريال</span>
+                <button
+                  class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium"
+                >
+                  إضافة
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl shadow p-4 flex">
+            <div
+              class="w-24 h-24 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl ml-4 flex-shrink-0"
+            ></div>
+            <div class="flex-1">
+              <h4 class="font-bold text-gray-800 mb-1">جزر عضوي</h4>
+              <p class="text-sm text-gray-500 mb-2">طازج عضوي، 500 جم</p>
+              <div class="flex items-center justify-between">
+                <span class="text-lg font-bold text-gray-800">3.49 ريال</span>
+                <button
+                  class="bg-purple-600 text-white px-4 py-2 rounded-lg text-sm font-medium"
+                >
+                  إضافة
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- تفاصيل المنتج -->
+    <div id="product" class="screen bg-white pb-24">
+      <div class="relative">
+        <div
+          class="h-80 bg-gradient-to-br from-green-400 to-green-600 relative"
+        >
+          <i
+            class="fas fa-arrow-right absolute top-4 right-4 text-white text-xl bg-black bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center z-10"
+          ></i>
+          <i
+            class="fas fa-share-alt absolute top-4 left-4 text-white text-xl bg-black bg-opacity-30 rounded-full w-10 h-10 flex items-center justify-center z-10"
+          ></i>
+          <div
+            class="absolute bottom-4 left-1/2 transform translate-x-1/2 flex space-x-2 space-x-reverse"
+          >
+            <div class="w-2 h-2 bg-white rounded-full"></div>
+            <div class="w-2 h-2 bg-white bg-opacity-50 rounded-full"></div>
+            <div class="w-2 h-2 bg-white bg-opacity-50 rounded-full"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-4 py-4">
+        <div class="flex items-center justify-between mb-2">
+          <h2 class="text-2xl font-bold text-gray-800">تفاح عضوي طازج</h2>
+          <div class="flex items-center bg-purple-100 px-3 py-1 rounded-lg">
+            <i class="fas fa-star text-yellow-400 ml-1"></i>
+            <span class="text-sm font-medium text-gray-800">4.8</span>
+          </div>
+        </div>
+        <p class="text-purple-600 font-semibold text-xl mb-4">4.99 ريال / كيلو</p>
+        <p class="text-gray-600 mb-6">
+          تفاح أحمر لذيذ بجودة عالية، محلي ومنتج عضوي. مثالي للتناول أو الطهي.
+        </p>
+
+        <div class="mb-6">
+          <h3 class="font-bold text-gray-800 mb-3">الكمية</h3>
+          <div class="flex items-center space-x-4 space-x-reverse">
+            <button
+              class="w-10 h-10 border-2 border-gray-300 rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-minus text-gray-600"></i>
+            </button>
+            <span class="text-xl font-bold text-gray-800">2 كيلو</span>
+            <button
+              class="w-10 h-10 bg-purple-600 text-white rounded-lg flex items-center justify-center"
+            >
+              <i class="fas fa-plus"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="mb-6">
+          <h3 class="font-bold text-gray-800 mb-3">تعليمات خاصة</h3>
+          <textarea
+            placeholder="أي طلبات خاصة؟"
+            class="w-full p-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500"
+            rows="3"
+          ></textarea>
+        </div>
+
+        <div class="flex space-x-3 space-x-reverse">
+          <button
+            class="flex-1 bg-white border-2 border-purple-600 text-purple-600 py-4 rounded-xl font-semibold"
+          >
+            <i class="fas fa-shopping-cart ml-2"></i>إضافة للسلة
+          </button>
+          <button
+            class="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-semibold"
+          >
+            شراء الآن
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- السلة -->
+    <div id="cart" class="screen bg-gray-50 pb-32">
+      <div class="bg-white shadow-sm sticky top-0 z-10 px-4 py-3">
+        <div class="flex items-center">
+          <i class="fas fa-arrow-right text-gray-600 text-xl ml-4"></i>
+          <h2 class="text-xl font-bold text-gray-800">سلة التسوق</h2>
+        </div>
+      </div>
+
+      <div class="px-4 py-4 space-y-3">
+        <div class="bg-white rounded-xl shadow p-4 flex">
+          <div
+            class="w-20 h-20 bg-gradient-to-br from-green-400 to-green-600 rounded-xl ml-4 flex-shrink-0"
+          ></div>
+          <div class="flex-1">
+            <h4 class="font-bold text-gray-800 mb-1">تفاح طازج</h4>
+            <p class="text-sm text-gray-500 mb-2">2 كيلو</p>
+            <div class="flex items-center justify-between">
+              <span class="text-lg font-bold text-gray-800">9.98 ريال</span>
+              <div class="flex items-center space-x-3 space-x-reverse">
+                <button
+                  class="w-8 h-8 border border-gray-300 rounded-lg flex items-center justify-center"
+                >
+                  <i class="fas fa-minus text-xs text-gray-600"></i>
+                </button>
+                <span class="text-sm font-medium">2</span>
+                <button
+                  class="w-8 h-8 bg-purple-600 text-white rounded-lg flex items-center justify-center"
+                >
+                  <i class="fas fa-plus text-xs"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-xl shadow p-4 flex">
+          <div
+            class="w-20 h-20 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl ml-4 flex-shrink-0"
+          ></div>
+          <div class="flex-1">
+            <h4 class="font-bold text-gray-800 mb-1">جزر عضوي</h4>
+            <p class="text-sm text-gray-500 mb-2">500 جم</p>
+            <div class="flex items-center justify-between">
+              <span class="text-lg font-bold text-gray-800">3.49 ريال</span>
+              <div class="flex items-center space-x-3 space-x-reverse">
+                <button
+                  class="w-8 h-8 border border-gray-300 rounded-lg flex items-center justify-center"
+                >
+                  <i class="fas fa-minus text-xs text-gray-600"></i>
+                </button>
+                <span class="text-sm font-medium">1</span>
+                <button
+                  class="w-8 h-8 bg-purple-600 text-white rounded-lg flex items-center justify-center"
+                >
+                  <i class="fas fa-plus text-xs"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="px-4 pb-4">
+        <div class="bg-white rounded-xl shadow p-4 mb-4">
+          <div class="flex items-center justify-between mb-3">
+            <input
+              type="text"
+              placeholder="كود الخصم"
+              class="flex-1 border border-gray-300 rounded-lg px-4 py-2 ml-2"
+            />
+            <button
+              class="bg-purple-600 text-white px-6 py-2 rounded-lg font-medium"
+            >
+              تطبيق
+            </button>
+          </div>
+          <div class="border-t border-gray-200 pt-3 space-y-2">
+            <div class="flex justify-between text-gray-600">
+              <span>المجموع الفرعي</span>
+              <span>13.47 ريال</span>
+            </div>
+            <div class="flex justify-between text-gray-600">
+              <span>رسوم التوصيل</span>
+              <span>مجاني</span>
+            </div>
+            <div
+              class="flex justify-between font-bold text-lg pt-2 border-t border-gray-200"
+            >
+              <span>الإجمالي</span>
+              <span>13.47 ريال</span>
+            </div>
+          </div>
+        </div>
+
+        <button
+          class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-semibold shadow-lg"
+        >
+          متابعة الدفع
+        </button>
+      </div>
+    </div>
+
+    <!-- الدفع -->
+    <div id="checkout" class="screen bg-gray-50 pb-24">
+      <div class="bg-white shadow-sm sticky top-0 z-10 px-4 py-3">
+        <div class="flex items-center">
+          <i class="fas fa-arrow-right text-gray-600 text-xl ml-4"></i>
+          <h2 class="text-xl font-bold text-gray-800">الدفع</h2>
+        </div>
+      </div>
+
+      <div class="px-4 py-4 space-y-4">
+        <!-- عنوان التوصيل -->
+        <div class="bg-white rounded-xl shadow p-4">
+          <div class="flex items-center justify-between mb-3">
+            <h3 class="font-bold text-gray-800">عنوان التوصيل</h3>
+            <button class="text-purple-600 text-sm font-medium">تغيير</button>
+          </div>
+          <div class="flex items-start">
+            <i class="fas fa-map-marker-alt text-purple-600 ml-3 mt-1"></i>
+            <div>
+              <p class="font-medium text-gray-800">محمد أحمد</p>
+              <p class="text-sm text-gray-600">123 شارع الرئيسي، شقة 4ب</p>
+              <p class="text-sm text-gray-600">الرياض، السعودية</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- طريقة الدفع -->
+        <div class="bg-white rounded-xl shadow p-4">
+          <h3 class="font-bold text-gray-800 mb-3">طريقة الدفع</h3>
+          <div class="space-y-3">
+            <label
+              class="flex items-center p-3 border-2 border-purple-600 rounded-xl bg-purple-50"
+            >
+              <input
+                type="radio"
+                name="payment"
+                checked
+                class="ml-3 text-purple-600"
+              />
+              <i class="fas fa-money-bill-wave text-purple-600 ml-3"></i>
+              <span class="font-medium text-gray-800">الدفع عند الاستلام</span>
+            </label>
+            <label
+              class="flex items-center p-3 border-2 border-gray-200 rounded-xl"
+            >
+              <input type="radio" name="payment" class="ml-3" />
+              <i class="fas fa-credit-card text-gray-400 ml-3"></i>
+              <span class="font-medium text-gray-800">بنكك</span>
+              <span class="mr-auto text-xs text-gray-500">رفع الإيصال</span>
+            </label>
+            <label
+              class="flex items-center p-3 border-2 border-gray-200 rounded-xl"
+            >
+              <input type="radio" name="payment" class="ml-3" />
+              <i class="fas fa-wallet text-gray-400 ml-3"></i>
+              <span class="font-medium text-gray-800">المحفظة</span>
+              <span class="mr-auto text-xs text-purple-600 font-medium"
+                >45.20 ريال</span
+              >
+            </label>
+          </div>
+        </div>
+
+        <!-- ملخص الطلب -->
+        <div class="bg-white rounded-xl shadow p-4">
+          <h3 class="font-bold text-gray-800 mb-3">ملخص الطلب</h3>
+          <div class="space-y-2 mb-3">
+            <div class="flex justify-between text-sm text-gray-600">
+              <span>تفاح طازج (2 كيلو)</span>
+              <span>9.98 ريال</span>
+            </div>
+            <div class="flex justify-between text-sm text-gray-600">
+              <span>جزر عضوي (500 جم)</span>
+              <span>3.49 ريال</span>
+            </div>
+            <div class="flex justify-between text-sm text-gray-600">
+              <span>رسوم التوصيل</span>
+              <span class="text-green-600">مجاني</span>
+            </div>
+          </div>
+          <div
+            class="border-t border-gray-200 pt-3 flex justify-between font-bold text-lg"
+          >
+            <span>الإجمالي</span>
+            <span>13.47 ريال</span>
+          </div>
+        </div>
+
+        <button
+          class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-semibold shadow-lg"
+        >
+          تأكيد الطلب
+        </button>
+      </div>
+    </div>
+
+    <!-- تتبع الطلب -->
+    <div id="tracking" class="screen bg-gray-50 pb-24">
+      <div class="bg-white shadow-sm sticky top-0 z-10 px-4 py-3">
+        <div class="flex items-center">
+          <i class="fas fa-arrow-right text-gray-600 text-xl ml-4"></i>
+          <h2 class="text-xl font-bold text-gray-800">الطلب #12345</h2>
+        </div>
+      </div>
+
+      <div class="px-4 py-4">
+        <!-- خط زمني للحالة -->
+        <div class="bg-white rounded-xl shadow p-4 mb-4">
+          <div class="flex items-start space-x-4 space-x-reverse">
+            <div class="flex flex-col items-center">
+              <div
+                class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-check text-white"></i>
+              </div>
+              <div class="w-1 h-12 bg-green-500"></div>
+              <div
+                class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-check text-white"></i>
+              </div>
+              <div class="w-1 h-12 bg-green-500"></div>
+              <div
+                class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center"
+              >
+                <i class="fas fa-check text-white"></i>
+              </div>
+              <div class="w-1 h-12 bg-purple-500"></div>
+              <div
+                class="w-10 h-10 border-4 border-purple-500 rounded-full bg-white"
+              ></div>
+            </div>
+            <div class="flex-1">
+              <div class="mb-8">
+                <p class="font-bold text-gray-800 mb-1">تم الطلب</p>
+                <p class="text-sm text-gray-500">2:30 م</p>
+              </div>
+              <div class="mb-8">
+                <p class="font-bold text-gray-800 mb-1">قيد التحضير</p>
+                <p class="text-sm text-gray-500">2:45 م</p>
+              </div>
+              <div class="mb-8">
+                <p class="font-bold text-gray-800 mb-1">في الطريق</p>
+                <p class="text-sm text-gray-500">3:15 م</p>
+              </div>
+              <div>
+                <p class="font-bold text-purple-600 mb-1">تم التسليم</p>
+                <p class="text-sm text-gray-500">متوقع: 3:45 م</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- معلومات المندوب -->
+        <div class="bg-white rounded-xl shadow p-4 mb-4">
+          <h3 class="font-bold text-gray-800 mb-3">مندوب التوصيل</h3>
+          <div class="flex items-center">
+            <div
+              class="w-16 h-16 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full ml-4 flex items-center justify-center text-white text-2xl font-bold"
+            >
+              مح
+            </div>
+            <div class="flex-1">
+              <p class="font-bold text-gray-800">محمد المندوب</p>
+              <div class="flex items-center text-sm text-gray-600">
+                <i class="fas fa-star text-yellow-400 ml-1"></i>
+                <span>4.9 (156)</span>
+              </div>
+            </div>
+            <button class="bg-purple-100 text-purple-600 px-4 py-2 rounded-lg">
+              <i class="fas fa-phone ml-2"></i>اتصال
+            </button>
+          </div>
+        </div>
+
+        <!-- خريطة -->
+        <div class="bg-white rounded-xl shadow overflow-hidden mb-4">
+          <div
+            class="h-48 bg-gradient-to-br from-blue-200 to-purple-200 relative flex items-center justify-center"
+          >
+            <div class="text-center">
+              <i
+                class="fas fa-map-marker-alt text-4xl text-purple-600 mb-2"
+              ></i>
+              <p class="text-gray-600 font-medium">تتبع مباشر</p>
+            </div>
+            <div
+              class="absolute bottom-4 right-4 bg-white px-3 py-2 rounded-lg shadow"
+            >
+              <p class="text-xs text-gray-500">متوقع: 15 دقيقة</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- تفاصيل الطلب -->
+        <div class="bg-white rounded-xl shadow p-4">
+          <h3 class="font-bold text-gray-800 mb-3">تفاصيل الطلب</h3>
+          <div class="space-y-2">
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-600">المنتجات</span>
+              <span class="font-medium text-gray-800">2</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-600">الإجمالي</span>
+              <span class="font-medium text-gray-800">13.47 ريال</span>
+            </div>
+            <div class="flex justify-between text-sm">
+              <span class="text-gray-600">الدفع</span>
+              <span class="font-medium text-gray-800">الدفع عند الاستلام</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

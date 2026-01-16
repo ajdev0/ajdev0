@@ -1,0 +1,1198 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة تحكم الإدارة - التصاميم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.plot.ly/plotly-3.1.1.min.js"></script>
+    <style>
+      body {
+        font-family: "Cairo", sans-serif;
+      }
+      .sidebar {
+        min-height: 100vh;
+        width: 280px;
+        position: fixed;
+        right: 0;
+        top: 0;
+      }
+      .main-content {
+        margin-right: 280px;
+        min-height: 100vh;
+      }
+      .gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .stat-card {
+        transition: transform 0.2s;
+      }
+      .stat-card:hover {
+        transform: translateY(-2px);
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              cairo: ["Cairo", "sans-serif"],
+            },
+            colors: {
+              primary: "#2D3748",
+              secondary: "#4A5568",
+              accent: "#F59E0B",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 font-cairo">
+    <!-- ADMIN LOGIN -->
+    <div
+      id="admin-login"
+      class="min-h-screen bg-gradient-to-br from-indigo-600 to-purple-600 flex items-center justify-center p-4"
+    >
+      <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
+        <div class="text-center mb-8">
+          <div
+            class="w-20 h-20 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg"
+          >
+            <i class="fas fa-shield-alt text-3xl text-white"></i>
+          </div>
+          <h2 class="text-3xl font-bold text-gray-800 mb-2">بوابة الإدارة</h2>
+          <p class="text-gray-500">سجل الدخول لإدارة المنصة</p>
+        </div>
+
+        <div class="space-y-5">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >البريد الإلكتروني</label
+            >
+            <div class="relative">
+              <i
+                class="fas fa-envelope absolute right-4 top-4 text-gray-400"
+              ></i>
+              <input
+                type="email"
+                placeholder="admin@example.com"
+                class="w-full pr-12 pl-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >كلمة المرور</label
+            >
+            <div class="relative">
+              <i class="fas fa-lock absolute right-4 top-4 text-gray-400"></i>
+              <input
+                type="password"
+                placeholder="أدخل كلمة المرور"
+                class="w-full pr-12 pl-12 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
+              />
+              <i
+                class="fas fa-eye absolute left-4 top-4 text-gray-400 cursor-pointer"
+              ></i>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <label class="flex items-center">
+              <input
+                type="checkbox"
+                class="ml-2 rounded text-indigo-600 focus:ring-indigo-500"
+              />
+              <span class="text-sm text-gray-600">تذكرني</span>
+            </label>
+            <a href="#" class="text-sm text-indigo-600 font-medium"
+              >نسيت كلمة المرور؟</a
+            >
+          </div>
+
+          <button
+            class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition"
+          >
+            تسجيل الدخول
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADMIN OVERVIEW -->
+    <div id="admin-overview" class="flex">
+      <!-- Sidebar -->
+      <div class="sidebar bg-white shadow-lg">
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-shield-alt text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="font-bold text-gray-800">لوحة الإدارة</h1>
+              <p class="text-xs text-gray-500">إدارة المنصة</p>
+            </div>
+          </div>
+        </div>
+
+        <nav class="p-4 space-y-2">
+          <a
+            href="#"
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
+          >
+            <i class="fas fa-chart-line"></i>
+            <span>نظرة عامة</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+          >
+            <i class="fas fa-shopping-bag"></i>
+            <span>الطلبات</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+          >
+            <i class="fas fa-credit-card"></i>
+            <span>المدفوعات والمحافظ</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+          >
+            <i class="fas fa-users"></i>
+            <span>المستخدمون</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+          >
+            <i class="fas fa-ticket-alt"></i>
+            <span>الكوبونات والعروض</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+          >
+            <i class="fas fa-chart-bar"></i>
+            <span>التقارير</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+          >
+            <i class="fas fa-cog"></i>
+            <span>الإعدادات</span>
+          </a>
+        </nav>
+
+        <div class="absolute bottom-0 w-full p-4 border-t border-gray-200">
+          <button
+            class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-red-600 hover:bg-red-50 rounded-xl w-full"
+          >
+            <i class="fas fa-sign-out-alt"></i>
+            <span>تسجيل الخروج</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content flex-1 p-8">
+        <!-- Header -->
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold text-gray-800 mb-2">نظرة عامة</h2>
+          <p class="text-gray-500">تحليلات المنصة والمؤشرات الرئيسية</p>
+        </div>
+
+        <!-- KPIs -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div
+            class="stat-card bg-white rounded-2xl shadow-lg p-6 border-l-4 border-blue-500"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-shopping-bag text-blue-600 text-xl"></i>
+              </div>
+              <span
+                class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium"
+              >
+                <i class="fas fa-arrow-up mr-1"></i>15%
+              </span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">12,547</h3>
+            <p class="text-sm text-gray-500">إجمالي الطلبات</p>
+          </div>
+
+          <div
+            class="stat-card bg-white rounded-2xl shadow-lg p-6 border-l-4 border-green-500"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-dollar-sign text-green-600 text-xl"></i>
+              </div>
+              <span
+                class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium"
+              >
+                <i class="fas fa-arrow-up ml-1"></i>22%
+              </span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">245,890 ريال</h3>
+            <p class="text-sm text-gray-500">إجمالي الإيرادات</p>
+          </div>
+
+          <div
+            class="stat-card bg-white rounded-2xl shadow-lg p-6 border-l-4 border-purple-500"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-users text-purple-600 text-xl"></i>
+              </div>
+              <span
+                class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full font-medium"
+              >
+                <i class="fas fa-arrow-up ml-1"></i>8%
+              </span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">8,956</h3>
+            <p class="text-sm text-gray-500">المستخدمون النشطون</p>
+          </div>
+
+          <div
+            class="stat-card bg-white rounded-2xl shadow-lg p-6 border-l-4 border-orange-500"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-store text-orange-600 text-xl"></i>
+              </div>
+              <span
+                class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium"
+              >
+                نشط
+              </span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">342</h3>
+            <p class="text-sm text-gray-500">التجار</p>
+          </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <!-- Revenue Chart -->
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-bold text-gray-800">Revenue Trend</h3>
+              <select
+                class="text-sm border border-gray-300 rounded-lg px-3 py-2 text-gray-600"
+              >
+                <option>Last 7 days</option>
+                <option>Last 30 days</option>
+                <option>Last 3 months</option>
+              </select>
+            </div>
+            <div
+              id="revenueChart"
+              class="h-64 flex items-center justify-center bg-gray-50 rounded-xl"
+            >
+              <div class="text-center text-gray-400">
+                <i class="fas fa-chart-line text-4xl mb-2"></i>
+                <p>Revenue Chart</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Orders Chart -->
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-bold text-gray-800">Orders Overview</h3>
+              <select
+                class="text-sm border border-gray-300 rounded-lg px-3 py-2 text-gray-600"
+              >
+                <option>Last 7 days</option>
+                <option>Last 30 days</option>
+                <option>Last 3 months</option>
+              </select>
+            </div>
+            <div
+              id="ordersChart"
+              class="h-64 flex items-center justify-center bg-gray-50 rounded-xl"
+            >
+              <div class="text-center text-gray-400">
+                <i class="fas fa-chart-bar text-4xl mb-2"></i>
+                <p>Orders Chart</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="bg-white rounded-2xl shadow-lg p-6">
+          <h3 class="text-lg font-bold text-gray-800 mb-6">Recent Activity</h3>
+          <div class="space-y-4">
+            <div
+              class="flex items-center justify-between pb-4 border-b border-gray-100"
+            >
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-shopping-bag text-blue-600"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-800">New order #12547</p>
+                  <p class="text-sm text-gray-500">2 minutes ago</p>
+                </div>
+              </div>
+              <span
+                class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium"
+                >New</span
+              >
+            </div>
+            <div
+              class="flex items-center justify-between pb-4 border-b border-gray-100"
+            >
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-user-plus text-green-600"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-800">
+                    New merchant registered
+                  </p>
+                  <p class="text-sm text-gray-500">15 minutes ago</p>
+                </div>
+              </div>
+              <span
+                class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium"
+                >Success</span
+              >
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center"
+                >
+                  <i class="fas fa-exclamation-triangle text-yellow-600"></i>
+                </div>
+                <div>
+                  <p class="font-medium text-gray-800">
+                    Payment verification pending
+                  </p>
+                  <p class="text-sm text-gray-500">1 hour ago</p>
+                </div>
+              </div>
+              <span
+                class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium"
+                >Pending</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDERS MANAGEMENT -->
+    <div id="orders-management" class="flex">
+      <div class="sidebar bg-white shadow-lg">
+        <!-- Same sidebar structure -->
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-shield-alt text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="font-bold text-gray-800">Admin Panel</h1>
+              <p class="text-xs text-gray-500">Platform Management</p>
+            </div>
+          </div>
+        </div>
+        <nav class="p-4 space-y-2">
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+          >
+            <i class="fas fa-chart-line"></i>
+            <span>Overview</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
+          >
+            <i class="fas fa-shopping-bag"></i>
+            <span>Orders</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="main-content flex-1 p-8">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">إدارة الطلبات</h2>
+            <p class="text-gray-500">إدارة ومراقبة جميع طلبات المنصة</p>
+          </div>
+          <button
+            class="bg-indigo-100 text-indigo-600 px-6 py-3 rounded-xl font-medium"
+          >
+            <i class="fas fa-download ml-2"></i>تصدير
+          </button>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Status</label
+              >
+              <select
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600"
+              >
+                <option>All Status</option>
+                <option>New</option>
+                <option>Processing</option>
+                <option>Delivered</option>
+                <option>Cancelled</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Date Range</label
+              >
+              <input
+                type="date"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Search</label
+              >
+              <div class="relative">
+                <i
+                  class="fas fa-search absolute left-3 top-3 text-gray-400"
+                ></i>
+                <input
+                  type="text"
+                  placeholder="Order ID, Customer..."
+                  class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg"
+                />
+              </div>
+            </div>
+            <div class="flex items-end">
+              <button
+                class="w-full bg-gradient-to-r from-indigo-600 to-purple-600 text-white py-2 rounded-lg font-medium"
+              >
+                Filter
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Orders Table -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Order ID
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Customer
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Merchant
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Amount
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Status
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Date
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="font-medium text-gray-800">#12345</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div>
+                      <p class="font-medium text-gray-800">John Doe</p>
+                      <p class="text-sm text-gray-500">john@example.com</p>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="text-gray-600">Fresh Market</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="font-medium text-gray-800">$13.47</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium"
+                      >Delivered</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    2:30 PM • Today
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <button class="text-indigo-600 hover:text-indigo-700">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAYMENTS & WALLETS -->
+    <div id="payments-wallets" class="flex">
+      <div class="sidebar bg-white shadow-lg">
+        <!-- Same sidebar structure -->
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-shield-alt text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="font-bold text-gray-800">Admin Panel</h1>
+              <p class="text-xs text-gray-500">Platform Management</p>
+            </div>
+          </div>
+        </div>
+        <nav class="p-4 space-y-2">
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
+          >
+            <i class="fas fa-credit-card"></i>
+            <span>Payments & Wallets</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="main-content flex-1 p-8">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold text-gray-800 mb-2">
+            المدفوعات والمحافظ
+          </h2>
+          <p class="text-gray-500">إدارة المدفوعات والمحافظ وإيصالات بنكك</p>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-dollar-sign text-green-600 text-xl"></i>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">$245,890</h3>
+            <p class="text-sm text-gray-500">Total Payments</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-yellow-100 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-clock text-yellow-600 text-xl"></i>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">23</h3>
+            <p class="text-sm text-gray-500">Pending Verifications</p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-red-100 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-undo text-red-600 text-xl"></i>
+              </div>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">$1,245</h3>
+            <p class="text-sm text-gray-500">Refunds Requested</p>
+          </div>
+        </div>
+
+        <!-- Tabs -->
+        <div class="bg-white rounded-2xl shadow-lg mb-6">
+          <div class="border-b border-gray-200">
+            <nav class="flex space-x-8 px-6">
+              <button
+                class="px-4 py-4 border-b-2 border-indigo-600 text-indigo-600 font-medium"
+              >
+                إيصالات بنكك
+              </button>
+              <button class="px-4 py-4 text-gray-600 hover:text-gray-800">
+                معاملات المحفظة
+              </button>
+              <button class="px-4 py-4 text-gray-600 hover:text-gray-800">
+                الاسترجاعات
+              </button>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Bankak Receipts -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <div class="p-6 border-b border-gray-200">
+            <h3 class="text-lg font-bold text-gray-800">
+              التحقق من إيصالات بنكك
+            </h3>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Receipt ID
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    User
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Amount
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Receipt
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Status
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Date
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="font-medium text-gray-800">#BK12345</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div>
+                      <p class="font-medium text-gray-800">John Doe</p>
+                      <p class="text-sm text-gray-500">john@example.com</p>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="font-medium text-gray-800">$13.47</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <button
+                      class="text-indigo-600 hover:text-indigo-700 text-sm font-medium"
+                    >
+                      <i class="fas fa-file-image mr-1"></i>View
+                    </button>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium"
+                      >Pending</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    2:30 PM • Today
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex space-x-2">
+                      <button
+                        class="text-green-600 hover:text-green-700"
+                        title="Approve"
+                      >
+                        <i class="fas fa-check"></i>
+                      </button>
+                      <button
+                        class="text-red-600 hover:text-red-700"
+                        title="Reject"
+                      >
+                        <i class="fas fa-times"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- USERS MANAGEMENT -->
+    <div id="users-management" class="flex">
+      <div class="sidebar bg-white shadow-lg">
+        <!-- Same sidebar structure -->
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-shield-alt text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="font-bold text-gray-800">Admin Panel</h1>
+              <p class="text-xs text-gray-500">Platform Management</p>
+            </div>
+          </div>
+        </div>
+        <nav class="p-4 space-y-2">
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
+          >
+            <i class="fas fa-users"></i>
+            <span>Users</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="main-content flex-1 p-8">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold text-gray-800 mb-2">
+            إدارة المستخدمين
+          </h2>
+          <p class="text-gray-500">إدارة العملاء والمندوبين والتجار</p>
+        </div>
+
+        <!-- User Type Tabs -->
+        <div class="bg-white rounded-2xl shadow-lg mb-6">
+          <div class="border-b border-gray-200">
+            <nav class="flex space-x-8 space-x-reverse px-6">
+              <button
+                class="px-4 py-4 border-b-2 border-indigo-600 text-indigo-600 font-medium"
+              >
+                العملاء
+              </button>
+              <button class="px-4 py-4 text-gray-600 hover:text-gray-800">
+                المندوبون
+              </button>
+              <button class="px-4 py-4 text-gray-600 hover:text-gray-800">
+                التجار
+              </button>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Customers Table -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <div
+            class="p-6 border-b border-gray-200 flex items-center justify-between"
+          >
+            <h3 class="text-lg font-bold text-gray-800">العملاء</h3>
+            <div class="flex items-center space-x-4 space-x-reverse">
+              <div class="relative">
+                <i
+                  class="fas fa-search absolute right-3 top-3 text-gray-400"
+                ></i>
+                <input
+                  type="text"
+                  placeholder="ابحث عن العملاء..."
+                  class="pr-10 pl-4 py-2 border border-gray-300 rounded-lg"
+                />
+              </div>
+              <button
+                class="bg-indigo-100 text-indigo-600 px-4 py-2 rounded-lg font-medium"
+              >
+                <i class="fas fa-download ml-2"></i>تصدير
+              </button>
+            </div>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    User
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Email
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Phone
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Orders
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Status
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Joined
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center">
+                      <div
+                        class="w-10 h-10 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center text-white font-bold mr-3"
+                      >
+                        JD
+                      </div>
+                      <div>
+                        <p class="font-medium text-gray-800">John Doe</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="text-gray-600">john@example.com</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="text-gray-600">+1 234 567 8900</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="font-medium text-gray-800">24</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-medium"
+                      >Active</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    Jan 15, 2024
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <button class="text-indigo-600 hover:text-indigo-700">
+                      <i class="fas fa-eye"></i>
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- COUPONS & OFFERS -->
+    <div id="coupons-offers" class="flex">
+      <div class="sidebar bg-white shadow-lg">
+        <!-- Same sidebar structure -->
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-shield-alt text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="font-bold text-gray-800">Admin Panel</h1>
+              <p class="text-xs text-gray-500">Platform Management</p>
+            </div>
+          </div>
+        </div>
+        <nav class="p-4 space-y-2">
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
+          >
+            <i class="fas fa-ticket-alt"></i>
+            <span>Coupons & Offers</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="main-content flex-1 p-8">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">
+              الكوبونات والعروض
+            </h2>
+            <p class="text-gray-500">
+              إدارة الكوبونات والعروض الترويجية على مستوى المنصة
+            </p>
+          </div>
+          <button
+            class="bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg"
+          >
+            <i class="fas fa-plus ml-2"></i>إنشاء كوبون
+          </button>
+        </div>
+
+        <!-- Coupons Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            class="bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl shadow-lg p-6 text-white"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm font-medium"
+              >
+                Active
+              </div>
+              <button
+                class="text-white hover:bg-white hover:bg-opacity-20 rounded-full w-8 h-8 flex items-center justify-center"
+              >
+                <i class="fas fa-edit"></i>
+              </button>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">FIRST30</h3>
+            <p class="text-purple-100 mb-4">30% OFF on first order</p>
+            <div class="flex items-center justify-between text-sm">
+              <span>Valid until: Jan 31, 2025</span>
+              <span class="font-bold">234 uses</span>
+            </div>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl shadow-lg p-6 text-white"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm font-medium"
+              >
+                Active
+              </div>
+              <button
+                class="text-white hover:bg-white hover:bg-opacity-20 rounded-full w-8 h-8 flex items-center justify-center"
+              >
+                <i class="fas fa-edit"></i>
+              </button>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">FREEDEL</h3>
+            <p class="text-blue-100 mb-4">Free delivery on orders $25+</p>
+            <div class="flex items-center justify-between text-sm">
+              <span>Valid until: Dec 31, 2024</span>
+              <span class="font-bold">1,245 uses</span>
+            </div>
+          </div>
+
+          <div
+            class="bg-gradient-to-br from-green-500 to-emerald-500 rounded-2xl shadow-lg p-6 text-white"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="bg-white bg-opacity-20 px-3 py-1 rounded-full text-sm font-medium"
+              >
+                Active
+              </div>
+              <button
+                class="text-white hover:bg-white hover:bg-opacity-20 rounded-full w-8 h-8 flex items-center justify-center"
+              >
+                <i class="fas fa-edit"></i>
+              </button>
+            </div>
+            <h3 class="text-2xl font-bold mb-2">SAVE15</h3>
+            <p class="text-green-100 mb-4">$15 OFF on orders $50+</p>
+            <div class="flex items-center justify-between text-sm">
+              <span>Valid until: Feb 28, 2025</span>
+              <span class="font-bold">567 uses</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADVANCED REPORTS -->
+    <div id="advanced-reports" class="flex">
+      <div class="sidebar bg-white shadow-lg">
+        <!-- Same sidebar structure -->
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-shield-alt text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="font-bold text-gray-800">Admin Panel</h1>
+              <p class="text-xs text-gray-500">Platform Management</p>
+            </div>
+          </div>
+        </div>
+        <nav class="p-4 space-y-2">
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 bg-indigo-50 text-indigo-600 rounded-xl font-medium"
+          >
+            <i class="fas fa-chart-bar"></i>
+            <span>Reports</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="main-content flex-1 p-8">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">
+              التقارير المتقدمة
+            </h2>
+            <p class="text-gray-500">تحليلات ورؤى شاملة</p>
+          </div>
+          <div class="flex space-x-3 space-x-reverse">
+            <select
+              class="border border-gray-300 rounded-xl px-4 py-2 text-gray-600"
+            >
+              <option>آخر 7 أيام</option>
+              <option>آخر 30 يوم</option>
+              <option>آخر 3 أشهر</option>
+              <option>آخر سنة</option>
+            </select>
+            <button
+              class="bg-indigo-100 text-indigo-600 px-6 py-2 rounded-xl font-medium"
+            >
+              <i class="fas fa-file-pdf ml-2"></i>تصدير PDF
+            </button>
+            <button
+              class="bg-green-100 text-green-600 px-6 py-2 rounded-xl font-medium"
+            >
+              <i class="fas fa-file-excel ml-2"></i>تصدير Excel
+            </button>
+          </div>
+        </div>
+
+        <!-- Report Charts -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-6">
+              Revenue Analysis
+            </h3>
+            <div
+              id="revenueReportChart"
+              class="h-80 flex items-center justify-center bg-gray-50 rounded-xl"
+            >
+              <div class="text-center text-gray-400">
+                <i class="fas fa-chart-area text-4xl mb-2"></i>
+                <p>Revenue Chart</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <h3 class="text-lg font-bold text-gray-800 mb-6">User Growth</h3>
+            <div
+              id="userGrowthChart"
+              class="h-80 flex items-center justify-center bg-gray-50 rounded-xl"
+            >
+              <div class="text-center text-gray-400">
+                <i class="fas fa-chart-line text-4xl mb-2"></i>
+                <p>User Growth Chart</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Summary Stats -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <h4 class="text-sm font-medium text-gray-500 mb-2">
+              Total Revenue
+            </h4>
+            <p class="text-3xl font-bold text-gray-800 mb-4">$245,890</p>
+            <p class="text-sm text-green-600">
+              <i class="fas fa-arrow-up mr-1"></i>22% from last period
+            </p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <h4 class="text-sm font-medium text-gray-500 mb-2">Active Users</h4>
+            <p class="text-3xl font-bold text-gray-800 mb-4">8,956</p>
+            <p class="text-sm text-green-600">
+              <i class="fas fa-arrow-up mr-1"></i>8% from last period
+            </p>
+          </div>
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <h4 class="text-sm font-medium text-gray-500 mb-2">Total Orders</h4>
+            <p class="text-3xl font-bold text-gray-800 mb-4">12,547</p>
+            <p class="text-sm text-green-600">
+              <i class="fas fa-arrow-up mr-1"></i>15% from last period
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,1233 @@
+<!DOCTYPE html>
+<html dir="rtl" lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة تحكم التاجر - التصاميم</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="https://cdn.plot.ly/plotly-3.1.1.min.js"></script>
+    <style>
+      body {
+        font-family: "Cairo", sans-serif;
+      }
+      .sidebar {
+        min-height: 100vh;
+        width: 260px;
+        position: fixed;
+        right: 0;
+        top: 0;
+      }
+      .main-content {
+        margin-right: 260px;
+        min-height: 100vh;
+      }
+      .gradient-primary {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      }
+      .stat-card {
+        transition: transform 0.2s;
+      }
+      .stat-card:hover {
+        transform: translateY(-2px);
+      }
+      ::-webkit-scrollbar {
+        display: none;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              cairo: ["Cairo", "sans-serif"],
+            },
+            colors: {
+              primary: "#2D3748",
+              secondary: "#4A5568",
+              accent: "#F59E0B",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-50 font-cairo">
+    <!-- MERCHANT LOGIN -->
+    <div
+      id="merchant-login"
+      class="min-h-screen bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center p-4"
+    >
+      <div class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
+        <div class="text-center mb-8">
+          <div
+            class="w-20 h-20 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl mx-auto mb-4 flex items-center justify-center shadow-lg"
+          >
+            <i class="fas fa-store text-3xl text-white"></i>
+          </div>
+          <h2 class="text-3xl font-bold text-gray-800 mb-2">بوابة التاجر</h2>
+          <p class="text-gray-500">سجل الدخول لإدارة متجرك</p>
+        </div>
+
+        <div class="space-y-5">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >البريد الإلكتروني</label
+            >
+            <div class="relative">
+              <i
+                class="fas fa-envelope absolute right-4 top-4 text-gray-400"
+              ></i>
+              <input
+                type="email"
+                placeholder="merchant@example.com"
+                class="w-full pr-12 pl-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >كلمة المرور</label
+            >
+            <div class="relative">
+              <i class="fas fa-lock absolute right-4 top-4 text-gray-400"></i>
+              <input
+                type="password"
+                placeholder="أدخل كلمة المرور"
+                class="w-full pr-12 pl-12 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+              />
+              <i
+                class="fas fa-eye absolute left-4 top-4 text-gray-400 cursor-pointer"
+              ></i>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <label class="flex items-center">
+              <input
+                type="checkbox"
+                class="ml-2 rounded text-purple-600 focus:ring-purple-500"
+              />
+              <span class="text-sm text-gray-600">تذكرني</span>
+            </label>
+            <a href="#" class="text-sm text-purple-600 font-medium"
+              >نسيت كلمة المرور؟</a
+            >
+          </div>
+
+          <button
+            class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-semibold shadow-lg hover:shadow-xl transition"
+          >
+            تسجيل الدخول
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- MERCHANT DASHBOARD -->
+    <div id="merchant-dashboard" class="flex">
+      <!-- Sidebar -->
+      <div class="sidebar bg-white shadow-lg">
+        <div class="p-6 border-b border-gray-200">
+            <div class="flex items-center space-x-3 space-x-reverse">
+              <div
+                class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-store text-white text-xl"></i>
+              </div>
+              <div>
+                <h1 class="font-bold text-gray-800">السوق الطازج</h1>
+                <p class="text-xs text-gray-500">تاجر</p>
+              </div>
+            </div>
+          </div>
+
+          <nav class="p-4 space-y-2">
+            <a
+              href="#"
+              class="flex items-center space-x-3 space-x-reverse px-4 py-3 bg-purple-50 text-purple-600 rounded-xl font-medium"
+            >
+              <i class="fas fa-chart-line"></i>
+              <span>لوحة التحكم</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+            >
+              <i class="fas fa-shopping-bag"></i>
+              <span>الطلبات</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+            >
+              <i class="fas fa-box"></i>
+              <span>المنتجات</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+            >
+              <i class="fas fa-credit-card"></i>
+              <span>الاشتراك</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+            >
+              <i class="fas fa-chart-bar"></i>
+              <span>التقارير</span>
+            </a>
+            <a
+              href="#"
+              class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+            >
+              <i class="fas fa-cog"></i>
+              <span>الإعدادات</span>
+            </a>
+          </nav>
+
+          <div class="absolute bottom-0 w-full p-4 border-t border-gray-200">
+            <button
+              class="flex items-center space-x-3 space-x-reverse px-4 py-3 text-red-600 hover:bg-red-50 rounded-xl w-full"
+            >
+              <i class="fas fa-sign-out-alt"></i>
+              <span>تسجيل الخروج</span>
+            </button>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content flex-1 p-8">
+            <!-- Header -->
+            <div class="mb-8">
+              <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                نظرة عامة على لوحة التحكم
+              </h2>
+              <p class="text-gray-500">
+                مرحباً بعودتك! إليك ما يحدث في متجرك اليوم.
+              </p>
+            </div>
+
+        <!-- Stats Cards -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <div
+            class="stat-card bg-white rounded-2xl shadow-lg p-6 border-l-4 border-blue-500"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-shopping-bag text-blue-600 text-xl"></i>
+              </div>
+              <span
+                class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium"
+              >
+                <i class="fas fa-arrow-up mr-1"></i>12%
+              </span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">156</h3>
+            <p class="text-sm text-gray-500">Total Orders</p>
+          </div>
+
+          <div
+            class="stat-card bg-white rounded-2xl shadow-lg p-6 border-l-4 border-green-500"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-dollar-sign text-green-600 text-xl"></i>
+              </div>
+              <span
+                class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium"
+              >
+                <i class="fas fa-arrow-up mr-1"></i>8%
+              </span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">$12,547</h3>
+            <p class="text-sm text-gray-500">Total Revenue</p>
+          </div>
+
+          <div
+            class="stat-card bg-white rounded-2xl shadow-lg p-6 border-l-4 border-purple-500"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-clock text-purple-600 text-xl"></i>
+              </div>
+              <span
+                class="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full font-medium"
+              >
+                Pending
+              </span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">23</h3>
+            <p class="text-sm text-gray-500">Pending Orders</p>
+          </div>
+
+          <div
+            class="stat-card bg-white rounded-2xl shadow-lg p-6 border-l-4 border-orange-500"
+          >
+            <div class="flex items-center justify-between mb-4">
+              <div
+                class="w-12 h-12 bg-orange-100 rounded-xl flex items-center justify-center"
+              >
+                <i class="fas fa-star text-orange-600 text-xl"></i>
+              </div>
+              <span
+                class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full font-medium"
+              >
+                4.8★
+              </span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">4.8</h3>
+            <p class="text-sm text-gray-500">Average Rating</p>
+          </div>
+        </div>
+
+        <!-- Charts Row -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <!-- Sales Chart -->
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-bold text-gray-800">Sales Overview</h3>
+              <select
+                class="text-sm border border-gray-300 rounded-lg px-3 py-2 text-gray-600"
+              >
+                <option>Last 7 days</option>
+                <option>Last 30 days</option>
+                <option>Last 3 months</option>
+              </select>
+            </div>
+            <div id="salesChart" class="h-64"></div>
+          </div>
+
+          <!-- Recent Orders -->
+          <div class="bg-white rounded-2xl shadow-lg p-6">
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="text-lg font-bold text-gray-800">Recent Orders</h3>
+              <a href="#" class="text-sm text-purple-600 font-medium"
+                >View all</a
+              >
+            </div>
+            <div class="space-y-4">
+              <div
+                class="flex items-center justify-between pb-4 border-b border-gray-100"
+              >
+                <div>
+                  <p class="font-medium text-gray-800">Order #12345</p>
+                  <p class="text-sm text-gray-500">John Doe • 2:30 PM</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-bold text-gray-800">$13.47</p>
+                  <span
+                    class="text-xs bg-green-100 text-green-700 px-2 py-1 rounded-full"
+                    >Delivered</span
+                  >
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between pb-4 border-b border-gray-100"
+              >
+                <div>
+                  <p class="font-medium text-gray-800">Order #12344</p>
+                  <p class="text-sm text-gray-500">Jane Smith • 1:15 PM</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-bold text-gray-800">$24.99</p>
+                  <span
+                    class="text-xs bg-yellow-100 text-yellow-700 px-2 py-1 rounded-full"
+                    >Preparing</span
+                  >
+                </div>
+              </div>
+              <div
+                class="flex items-center justify-between pb-4 border-b border-gray-100"
+              >
+                <div>
+                  <p class="font-medium text-gray-800">Order #12343</p>
+                  <p class="text-sm text-gray-500">Mike Johnson • 12:00 PM</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-bold text-gray-800">$45.50</p>
+                  <span
+                    class="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded-full"
+                    >On the way</span
+                  >
+                </div>
+              </div>
+              <div class="flex items-center justify-between">
+                <div>
+                  <p class="font-medium text-gray-800">Order #12342</p>
+                  <p class="text-sm text-gray-500">Sarah Williams • 11:45 AM</p>
+                </div>
+                <div class="text-right">
+                  <p class="font-bold text-gray-800">$18.75</p>
+                  <span
+                    class="text-xs bg-purple-100 text-purple-700 px-2 py-1 rounded-full"
+                    >New</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ORDERS MANAGEMENT -->
+    <div id="orders-management" class="flex">
+      <div class="sidebar bg-white shadow-lg">
+        <!-- Same sidebar as dashboard -->
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-store text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="font-bold text-gray-800">Fresh Market</h1>
+              <p class="text-xs text-gray-500">Merchant</p>
+            </div>
+          </div>
+        </div>
+        <nav class="p-4 space-y-2">
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+          >
+            <i class="fas fa-chart-line"></i>
+            <span>Dashboard</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 bg-purple-50 text-purple-600 rounded-xl font-medium"
+          >
+            <i class="fas fa-shopping-bag"></i>
+            <span>Orders</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+          >
+            <i class="fas fa-box"></i>
+            <span>Products</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="main-content flex-1 p-8">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold text-gray-800 mb-2">
+            Orders Management
+          </h2>
+          <p class="text-gray-500">Manage and track all your orders</p>
+        </div>
+
+        <!-- Filters -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Status</label
+              >
+              <select
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600"
+              >
+                <option>All Status</option>
+                <option>New</option>
+                <option>Preparing</option>
+                <option>Ready</option>
+                <option>On the way</option>
+                <option>Delivered</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Date Range</label
+              >
+              <input
+                type="date"
+                class="w-full border border-gray-300 rounded-lg px-4 py-2 text-gray-600"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Search</label
+              >
+              <div class="relative">
+                <i
+                  class="fas fa-search absolute left-3 top-3 text-gray-400"
+                ></i>
+                <input
+                  type="text"
+                  placeholder="Order ID, Customer..."
+                  class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg"
+                />
+              </div>
+            </div>
+            <div class="flex items-end">
+              <button
+                class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-2 rounded-lg font-medium"
+              >
+                Filter
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Orders Table -->
+        <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead class="bg-gray-50">
+                <tr>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Order ID
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Customer
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Items
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Amount
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Status
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Date
+                  </th>
+                  <th
+                    class="px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase"
+                  >
+                    Actions
+                  </th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-gray-200">
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="font-medium text-gray-800">#12345</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div>
+                      <p class="font-medium text-gray-800">John Doe</p>
+                      <p class="text-sm text-gray-500">john@example.com</p>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="text-gray-600">2 items</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="font-medium text-gray-800">$13.47</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-xs font-medium"
+                      >New</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    2:30 PM • Today
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex space-x-2">
+                      <button class="text-purple-600 hover:text-purple-700">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="text-green-600 hover:text-green-700">
+                        <i class="fas fa-check"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+                <tr class="hover:bg-gray-50">
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="font-medium text-gray-800">#12344</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div>
+                      <p class="font-medium text-gray-800">Jane Smith</p>
+                      <p class="text-sm text-gray-500">jane@example.com</p>
+                    </div>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="text-gray-600">3 items</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="font-medium text-gray-800">$24.99</span>
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <span
+                      class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-medium"
+                      >Preparing</span
+                    >
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                    1:15 PM • Today
+                  </td>
+                  <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex space-x-2">
+                      <button class="text-purple-600 hover:text-purple-700">
+                        <i class="fas fa-eye"></i>
+                      </button>
+                      <button class="text-green-600 hover:text-green-700">
+                        <i class="fas fa-check"></i>
+                      </button>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTS MANAGEMENT -->
+    <div id="products-management" class="flex">
+      <div class="sidebar bg-white shadow-lg">
+        <!-- Same sidebar structure -->
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-store text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="font-bold text-gray-800">Fresh Market</h1>
+              <p class="text-xs text-gray-500">Merchant</p>
+            </div>
+          </div>
+        </div>
+        <nav class="p-4 space-y-2">
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+          >
+            <i class="fas fa-chart-line"></i>
+            <span>Dashboard</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+          >
+            <i class="fas fa-shopping-bag"></i>
+            <span>Orders</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 bg-purple-50 text-purple-600 rounded-xl font-medium"
+          >
+            <i class="fas fa-box"></i>
+            <span>Products</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="main-content flex-1 p-8">
+                <div class="flex items-center justify-between mb-8">
+                  <div>
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">
+                      إدارة المنتجات
+                    </h2>
+                    <p class="text-gray-500">
+                      إدارة منتجات متجرك والمخزون
+                    </p>
+                  </div>
+                  <button
+                    class="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition"
+                  >
+                    <i class="fas fa-plus ml-2"></i>إضافة منتج
+                  </button>
+                </div>
+
+        <!-- Search and Filter -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+          <div class="flex items-center space-x-4">
+            <div class="flex-1 relative">
+              <i class="fas fa-search absolute left-4 top-4 text-gray-400"></i>
+              <input
+                type="text"
+                placeholder="Search products..."
+                class="w-full pl-12 pr-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500"
+              />
+            </div>
+            <select
+              class="border border-gray-300 rounded-xl px-4 py-3 text-gray-600"
+            >
+              <option>All Categories</option>
+              <option>Fruits</option>
+              <option>Vegetables</option>
+              <option>Dairy</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div
+              class="h-48 bg-gradient-to-br from-green-400 to-green-600 relative"
+            >
+              <button
+                class="absolute top-3 right-3 bg-white bg-opacity-80 rounded-full w-10 h-10 flex items-center justify-center"
+              >
+                <i class="fas fa-edit text-purple-600"></i>
+              </button>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800 mb-2">Fresh Apples</h3>
+              <p class="text-sm text-gray-500 mb-3">Red delicious, per kg</p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xl font-bold text-gray-800">$4.99</span>
+                <span class="text-sm text-gray-500">Stock: 50 kg</span>
+              </div>
+              <div class="flex space-x-2">
+                <button
+                  class="flex-1 bg-purple-100 text-purple-600 py-2 rounded-lg font-medium"
+                >
+                  <i class="fas fa-edit mr-1"></i>Edit
+                </button>
+                <button
+                  class="w-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center"
+                >
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div
+              class="h-48 bg-gradient-to-br from-orange-400 to-orange-600 relative"
+            >
+              <button
+                class="absolute top-3 right-3 bg-white bg-opacity-80 rounded-full w-10 h-10 flex items-center justify-center"
+              >
+                <i class="fas fa-edit text-purple-600"></i>
+              </button>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800 mb-2">Organic Carrots</h3>
+              <p class="text-sm text-gray-500 mb-3">Fresh organic, 500g</p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xl font-bold text-gray-800">$3.49</span>
+                <span class="text-sm text-gray-500">Stock: 30 pcs</span>
+              </div>
+              <div class="flex space-x-2">
+                <button
+                  class="flex-1 bg-purple-100 text-purple-600 py-2 rounded-lg font-medium"
+                >
+                  <i class="fas fa-edit mr-1"></i>Edit
+                </button>
+                <button
+                  class="w-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center"
+                >
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-2xl shadow-lg overflow-hidden">
+            <div
+              class="h-48 bg-gradient-to-br from-blue-400 to-blue-600 relative"
+            >
+              <button
+                class="absolute top-3 right-3 bg-white bg-opacity-80 rounded-full w-10 h-10 flex items-center justify-center"
+              >
+                <i class="fas fa-edit text-purple-600"></i>
+              </button>
+            </div>
+            <div class="p-4">
+              <h3 class="font-bold text-gray-800 mb-2">Fresh Milk</h3>
+              <p class="text-sm text-gray-500 mb-3">Whole milk, 1 liter</p>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-xl font-bold text-gray-800">$2.99</span>
+                <span class="text-sm text-red-500 font-medium">Stock: Low</span>
+              </div>
+              <div class="flex space-x-2">
+                <button
+                  class="flex-1 bg-purple-100 text-purple-600 py-2 rounded-lg font-medium"
+                >
+                  <i class="fas fa-edit mr-1"></i>Edit
+                </button>
+                <button
+                  class="w-12 bg-red-100 text-red-600 rounded-lg flex items-center justify-center"
+                >
+                  <i class="fas fa-trash"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ADD/EDIT PRODUCT MODAL -->
+    <div
+      id="product-modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+    >
+      <div
+        class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto"
+      >
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center justify-between">
+            <h3 class="text-2xl font-bold text-gray-800">Add Product</h3>
+            <button
+              class="w-10 h-10 bg-gray-100 rounded-full flex items-center justify-center hover:bg-gray-200"
+            >
+              <i class="fas fa-times text-gray-600"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="p-6 space-y-6">
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Product Name</label
+            >
+            <input
+              type="text"
+              placeholder="Enter product name"
+              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500"
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Price ($)</label
+              >
+              <input
+                type="number"
+                placeholder="0.00"
+                step="0.01"
+                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2"
+                >Quantity / Stock</label
+              >
+              <input
+                type="number"
+                placeholder="0"
+                class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Description</label
+            >
+            <textarea
+              placeholder="Product description..."
+              rows="4"
+              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500"
+            ></textarea>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Category</label
+            >
+            <select
+              class="w-full px-4 py-3 border border-gray-300 rounded-xl focus:ring-2 focus:ring-purple-500"
+            >
+              <option>Select category</option>
+              <option>Fruits</option>
+              <option>Vegetables</option>
+              <option>Dairy</option>
+              <option>Meat</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-gray-700 mb-2"
+              >Product Images</label
+            >
+            <div
+              class="border-2 border-dashed border-gray-300 rounded-xl p-8 text-center"
+            >
+              <i
+                class="fas fa-cloud-upload-alt text-4xl text-gray-400 mb-4"
+              ></i>
+              <p class="text-gray-600 mb-2">Drag & drop images here</p>
+              <p class="text-sm text-gray-500 mb-4">or</p>
+              <button
+                class="bg-purple-100 text-purple-600 px-6 py-2 rounded-lg font-medium"
+              >
+                Browse Files
+              </button>
+            </div>
+          </div>
+
+          <div class="flex space-x-4 pt-4 border-t border-gray-200">
+            <button
+              class="flex-1 bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold"
+            >
+              Cancel
+            </button>
+            <button
+              class="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-xl font-semibold shadow-lg"
+            >
+              Save Product
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUBSCRIPTION -->
+    <div id="subscription" class="flex">
+      <div class="sidebar bg-white shadow-lg">
+        <!-- Same sidebar structure -->
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-store text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="font-bold text-gray-800">Fresh Market</h1>
+              <p class="text-xs text-gray-500">Merchant</p>
+            </div>
+          </div>
+        </div>
+        <nav class="p-4 space-y-2">
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+          >
+            <i class="fas fa-chart-line"></i>
+            <span>Dashboard</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 bg-purple-50 text-purple-600 rounded-xl font-medium"
+          >
+            <i class="fas fa-credit-card"></i>
+            <span>Subscription</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="main-content flex-1 p-8">
+        <div class="mb-8">
+          <h2 class="text-3xl font-bold text-gray-800 mb-2">
+            Subscription Plans
+          </h2>
+          <p class="text-gray-500">
+            Manage your subscription and upgrade your plan
+          </p>
+        </div>
+
+        <!-- Current Plan -->
+        <div
+          class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl shadow-xl p-8 text-white mb-8"
+        >
+          <div class="flex items-center justify-between mb-6">
+            <div>
+              <p class="text-purple-100 mb-2">Current Plan</p>
+              <h3 class="text-3xl font-bold">Professional</h3>
+            </div>
+            <div
+              class="w-16 h-16 bg-white bg-opacity-20 rounded-2xl flex items-center justify-center"
+            >
+              <i class="fas fa-crown text-3xl"></i>
+            </div>
+          </div>
+          <div class="flex items-center space-x-8">
+            <div>
+              <p class="text-purple-100 text-sm mb-1">Billing</p>
+              <p class="text-xl font-bold">$99/month</p>
+            </div>
+            <div>
+              <p class="text-purple-100 text-sm mb-1">Renewal Date</p>
+              <p class="text-xl font-bold">Jan 15, 2025</p>
+            </div>
+            <div>
+              <p class="text-purple-100 text-sm mb-1">Status</p>
+              <span
+                class="px-3 py-1 bg-green-500 rounded-full text-sm font-medium"
+                >Active</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Upgrade Options -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 border-2 border-gray-200"
+          >
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Basic</h3>
+            <p class="text-3xl font-bold text-gray-800 mb-1">
+              $29<span class="text-lg text-gray-500">/month</span>
+            </p>
+            <p class="text-sm text-gray-500 mb-6">Perfect for small stores</p>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-center text-sm text-gray-600">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Up to 100 products</span>
+              </li>
+              <li class="flex items-center text-sm text-gray-600">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Basic analytics</span>
+              </li>
+              <li class="flex items-center text-sm text-gray-600">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Email support</span>
+              </li>
+            </ul>
+            <button
+              class="w-full bg-gray-100 text-gray-700 py-3 rounded-xl font-semibold"
+            >
+              Current Plan
+            </button>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl shadow-xl p-6 border-2 border-purple-500 relative"
+          >
+            <div
+              class="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2"
+            >
+              <span
+                class="bg-purple-500 text-white px-4 py-1 rounded-full text-xs font-bold"
+                >RECOMMENDED</span
+              >
+            </div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Professional</h3>
+            <p class="text-3xl font-bold text-gray-800 mb-1">
+              $99<span class="text-lg text-gray-500">/month</span>
+            </p>
+            <p class="text-sm text-gray-500 mb-6">For growing businesses</p>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-center text-sm text-gray-600">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Unlimited products</span>
+              </li>
+              <li class="flex items-center text-sm text-gray-600">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Advanced analytics</span>
+              </li>
+              <li class="flex items-center text-sm text-gray-600">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Priority support</span>
+              </li>
+              <li class="flex items-center text-sm text-gray-600">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Custom branding</span>
+              </li>
+            </ul>
+            <button
+              class="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-3 rounded-xl font-semibold shadow-lg"
+            >
+              Current Plan
+            </button>
+          </div>
+
+          <div
+            class="bg-white rounded-2xl shadow-lg p-6 border-2 border-gray-200"
+          >
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Enterprise</h3>
+            <p class="text-3xl font-bold text-gray-800 mb-1">
+              $199<span class="text-lg text-gray-500">/month</span>
+            </p>
+            <p class="text-sm text-gray-500 mb-6">For large enterprises</p>
+            <ul class="space-y-3 mb-6">
+              <li class="flex items-center text-sm text-gray-600">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Unlimited everything</span>
+              </li>
+              <li class="flex items-center text-sm text-gray-600">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Full API access</span>
+              </li>
+              <li class="flex items-center text-sm text-gray-600">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>24/7 phone support</span>
+              </li>
+              <li class="flex items-center text-sm text-gray-600">
+                <i class="fas fa-check text-green-500 mr-2"></i>
+                <span>Dedicated manager</span>
+              </li>
+            </ul>
+            <button
+              class="w-full bg-purple-100 text-purple-600 py-3 rounded-xl font-semibold"
+            >
+              Upgrade
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REPORTS -->
+    <div id="reports" class="flex">
+      <div class="sidebar bg-white shadow-lg">
+        <!-- Same sidebar structure -->
+        <div class="p-6 border-b border-gray-200">
+          <div class="flex items-center space-x-3">
+            <div
+              class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center"
+            >
+              <i class="fas fa-store text-white text-xl"></i>
+            </div>
+            <div>
+              <h1 class="font-bold text-gray-800">Fresh Market</h1>
+              <p class="text-xs text-gray-500">Merchant</p>
+            </div>
+          </div>
+        </div>
+        <nav class="p-4 space-y-2">
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 text-gray-600 hover:bg-gray-50 rounded-xl"
+          >
+            <i class="fas fa-chart-line"></i>
+            <span>Dashboard</span>
+          </a>
+          <a
+            href="#"
+            class="flex items-center space-x-3 px-4 py-3 bg-purple-50 text-purple-600 rounded-xl font-medium"
+          >
+            <i class="fas fa-chart-bar"></i>
+            <span>Reports</span>
+          </a>
+        </nav>
+      </div>
+
+      <div class="main-content flex-1 p-8">
+        <div class="flex items-center justify-between mb-8">
+          <div>
+            <h2 class="text-3xl font-bold text-gray-800 mb-2">Sales Reports</h2>
+            <p class="text-gray-500">
+              Analytics and insights for your business
+            </p>
+          </div>
+          <div class="flex space-x-3">
+            <select
+              class="border border-gray-300 rounded-xl px-4 py-2 text-gray-600"
+            >
+              <option>Last 7 days</option>
+              <option>Last 30 days</option>
+              <option>Last 3 months</option>
+              <option>Last year</option>
+            </select>
+            <button
+              class="bg-purple-100 text-purple-600 px-6 py-2 rounded-xl font-medium"
+            >
+              <i class="fas fa-download mr-2"></i>Export
+            </button>
+          </div>
+        </div>
+
+        <!-- Sales Chart -->
+        <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+          <h3 class="text-lg font-bold text-gray-800 mb-6">Sales Chart</h3>
+          <div id="salesReportChart" class="h-80"></div>
+        </div>
+
+        <!-- Top Products -->
+        <div class="bg-white rounded-2xl shadow-lg p-6">
+          <h3 class="text-lg font-bold text-gray-800 mb-6">Top Products</h3>
+          <div class="space-y-4">
+            <div
+              class="flex items-center justify-between pb-4 border-b border-gray-100"
+            >
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-xl"
+                ></div>
+                <div>
+                  <p class="font-medium text-gray-800">Fresh Apples</p>
+                  <p class="text-sm text-gray-500">156 sold</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="font-bold text-gray-800">$778.44</p>
+                <p class="text-sm text-green-600">+23% from last month</p>
+              </div>
+            </div>
+            <div
+              class="flex items-center justify-between pb-4 border-b border-gray-100"
+            >
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl"
+                ></div>
+                <div>
+                  <p class="font-medium text-gray-800">Organic Carrots</p>
+                  <p class="text-sm text-gray-500">98 sold</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="font-bold text-gray-800">$342.02</p>
+                <p class="text-sm text-green-600">+15% from last month</p>
+              </div>
+            </div>
+            <div class="flex items-center justify-between">
+              <div class="flex items-center space-x-4">
+                <div
+                  class="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl"
+                ></div>
+                <div>
+                  <p class="font-medium text-gray-800">Fresh Milk</p>
+                  <p class="text-sm text-gray-500">87 sold</p>
+                </div>
+              </div>
+              <div class="text-right">
+                <p class="font-bold text-gray-800">$260.13</p>
+                <p class="text-sm text-green-600">+8% from last month</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Simple chart placeholder (you can integrate with Chart.js or Plotly)
+      document.addEventListener("DOMContentLoaded", function () {
+        // Chart initialization would go here
+      });
+    </script>
+  </body>
+</html>
