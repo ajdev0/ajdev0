@@ -26,7 +26,7 @@ Developers need a safe place to build against open banking APIs before connectin
 **Challenge:** tenant isolation between developer organizations, with identity and OAuth client management delegated to Keycloak.
 
 ### Riyalak — SAMA-licensed Personal Finance App · [seentarbi.sa](https://seentarbi.sa/en/products/riyalak)
-Riyalak connects to users' bank accounts through open banking to track spending, auto-categorize transactions, and manage budgets, with an AI chatbot, in Arabic and English. As Senior Engineer I worked on backend architecture and the bank-linking and transaction services; as Technical Lead I lead the backend and mobile team.
+Riyalak connects to users' bank accounts through open banking to track spending, auto-categorize transactions, and manage budgets, in Arabic and English. As Senior Engineer I worked on backend architecture and the bank-linking and transaction services; as Technical Lead I lead the backend and mobile team.
 **Stack:** Java, Spring Boot, Node.js, PostgreSQL, Redis, Kubernetes, CI/CD
 **Challenge:** keeping bank-sourced transaction data consistent and reliable at scale — work that delivered a ~40% backend performance improvement.
 
