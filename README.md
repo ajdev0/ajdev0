@@ -1,26 +1,51 @@
-<h1 align="center">Hi 👋, I'm Abrar Adam</h1>
-<h3 align="center">A passionate full statck developer</h3>
+# Abrar Ibrahim
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=ajdev0&label=Profile%20views&color=0e75b6&style=flat" alt="ajdev0" /> </p>
+**Senior Full Stack Engineer & Technical Lead · FinTech & Open Banking** — Jeddah, Saudi Arabia
 
+I build and lead FinTech platforms at Seen Tarbi, where I work on open banking, OAuth 2.0 / OpenID Connect identity, and distributed backend systems with a focus on transaction processing, data consistency, and performance. As Technical Lead I mentor an international backend and mobile team and own architecture, CI/CD, and observability. Outside work, I ship complete products solo — from backend APIs and web dashboards to iOS and Android apps.
 
+---
 
-- 🌱 Check my **<a href="https://abraribrahim.netlify.app/" target="blank">Portfolio</a>**
+## Tech Stack
 
-- 💬 Ask me about **React, Node**
+| | |
+|---|---|
+| **Backend** | Java, Spring Boot, Node.js, TypeScript, Python |
+| **Frontend & Mobile** | React, Next.js, Flutter (iOS & Android) |
+| **Data** | PostgreSQL, MySQL, Redis |
+| **Identity & Security** | Keycloak, OAuth 2.0, OpenID Connect |
+| **Cloud & DevOps** | Docker, Kubernetes, AWS, OCI, GitHub Actions, Jenkins |
 
-- 📫 How to reach me **abrarnourain7@gmail.com**
+---
 
-- ⚡ Fun fact **In Tech learning never stop.**
+## Selected Work
 
-<h3 align="left">Connect with me:</h3>
-<p align="left">
-<a href="https://www.linkedin.com/in/ajdev0/" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg" alt="https://www.linkedin.com/in/ajdev0/" height="30" width="40" /></a>
-</p>
+### X Lab — Open Banking Developer Sandbox · [xlab.xsquare.sa](https://xlab.xsquare.sa/)
+Developers need a safe place to build against open banking APIs before connecting to real banks. I built X Lab end-to-end: a multi-tenant developer sandbox where developers sign up, create applications, and receive client credentials to call open banking APIs in a test environment. I also built the **Seen Model Bank**, a simulated bank that serves realistic account and transaction data through those APIs.
+**Stack:** Java, Spring Boot, React, Next.js, Keycloak (OAuth 2.0 / OIDC), PostgreSQL
+**Challenge:** tenant isolation between developer organizations, with identity and OAuth client management delegated to Keycloak.
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://developer.android.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="40" height="40"/> </a> <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a> <a href="https://babeljs.io/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/babeljs/babeljs-icon.svg" alt="babel" width="40" height="40"/> </a> <a href="https://getbootstrap.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/bootstrap/bootstrap-plain-wordmark.svg" alt="bootstrap" width="40" height="40"/> </a> <a href="https://www.chartjs.org" target="_blank" rel="noreferrer"> <img src="https://www.chartjs.org/media/logo-title.svg" alt="chartjs" width="40" height="40"/> </a> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://graphql.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg" alt="graphql" width="40" height="40"/> </a> <a href="https://heroku.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/heroku/heroku-icon.svg" alt="heroku" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://www.adobe.com/in/products/illustrator.html" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg" alt="illustrator" width="40" height="40"/> </a> <a href="https://jasmine.github.io/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jasmine/jasmine-icon.svg" alt="jasmine" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://jestjs.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jestjsio/jestjsio-icon.svg" alt="jest" width="40" height="40"/> </a> <a href="https://kubernetes.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://nestjs.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nestjs/nestjs-plain.svg" alt="nestjs" width="40" height="40"/> </a> <a href="https://nextjs.org/" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/nextjs-2.svg" alt="nextjs" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://www.photoshop.com/en" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/> </a> <a href="https://www.php.net" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/> </a> <a href="https://www.postgresql.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://reactnative.dev/" target="_blank" rel="noreferrer"> <img src="https://reactnative.dev/img/header_logo.svg" alt="reactnative" width="40" height="40"/> </a> <a href="https://redux.js.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redux/redux-original.svg" alt="redux" width="40" height="40"/> </a> <a href="https://sass-lang.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/sass/sass-original.svg" alt="sass" width="40" height="40"/> </a> <a href="https://www.scala-lang.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/scala/scala-original.svg" alt="scala" width="40" height="40"/> </a> <a href="https://www.sqlite.org/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/sqlite/sqlite-icon.svg" alt="sqlite" width="40" height="40"/> </a> <a href="https://tailwindcss.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/tailwindcss/tailwindcss-icon.svg" alt="tailwind" width="40" height="40"/> </a> <a href="https://www.typescriptlang.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/typescript/typescript-original.svg" alt="typescript" width="40" height="40"/> </a> <a href="https://vuejs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/vuejs/vuejs-original-wordmark.svg" alt="vuejs" width="40" height="40"/> </a> <a href="https://webpack.js.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/d00d0969292a6569d45b06d3f350f463a0107b0d/icons/webpack/webpack-original-wordmark.svg" alt="webpack" width="40" height="40"/> </a> <a href="https://www.adobe.com/products/xd.html" target="_blank" rel="noreferrer"> <img src="https://cdn.worldvectorlogo.com/logos/adobe-xd.svg" alt="xd" width="40" height="40"/> </a> </p>
+### Riyalak — SAMA-licensed Personal Finance App · [seentarbi.sa](https://seentarbi.sa/en/products/riyalak)
+Riyalak connects to users' bank accounts through open banking to track spending, auto-categorize transactions, and manage budgets, with an AI chatbot, in Arabic and English. As Senior Engineer I worked on backend architecture and the bank-linking and transaction services; as Technical Lead I lead the backend and mobile team.
+**Stack:** Java, Spring Boot, Node.js, PostgreSQL, Redis, Kubernetes, CI/CD
+**Challenge:** keeping bank-sourced transaction data consistent and reliable at scale — work that delivered a ~40% backend performance improvement.
 
+### Laloop — Delivery Platform · [laloopapp.com](https://laloopapp.com/)
+A delivery platform I designed and built single-handedly: a customer ordering app, a driver app, a merchant dashboard, and an admin panel. I own product, architecture, backend APIs, web dashboards, mobile apps, deployment, and production support.
+**Stack:** Flutter (iOS & Android), React, Next.js, Node.js, Express, PostgreSQL, Redis, WebSockets, Maps
+**Challenge:** coordinating the order lifecycle between customers, merchants, and drivers, with real-time order updates over WebSockets.
+**Apps:** [Customer — App Store](https://apps.apple.com/sa/app/laloop/id6780287867) · [Customer — Google Play](https://play.google.com/store/apps/details?id=com.laloopapp.store) · [Driver — Google Play](https://play.google.com/store/apps/details?id=com.laloopapp.captin)
 
+---
 
+## Featured Projects
 
+- **Open Banking Developer Sandbox** — multi-tenant developer portal with Keycloak OAuth and a mock bank API *(in progress)*
+- **[token-shrink](https://github.com/ajdev0/token-shrink)** — local-first token reduction engine and MCP server that prunes implementation bodies while preserving type signatures and exports ([npm](https://www.npmjs.com/package/@ajdev0/token-shrink))
+- **[opsbot](https://github.com/ajdev0/opsbot)** — lightweight self-hosted server assistant for monitoring, alerts, logs, and deploys via Telegram
+
+---
+
+## Contact
+
+[LinkedIn](https://www.linkedin.com/in/ajdev0) · [abrar.adam.09@gmail.com](mailto:abrar.adam.09@gmail.com) · [Portfolio](https://abraribrahim.netlify.app)
